@@ -1,0 +1,22 @@
+- company: K1 Investment
+  role: Private Equity Intern
+  dates: Summer 2025
+  bullets:
+    - Analyzed SaaS KPIs (ARR, CAC, churn) for investment decisions
+    - Built components of LBO and DCF models
+    - Performed market comps and usability testing
+  tags: [Finance, Modeling]
+- company: Scooped Homemade Icecream
+  role: Manager
+  dates: May 2022–Present
+  bullets:
+    - Forecasted demand and managed inventory, scheduling, staffing
+    - Tracked daily cash flow and trained 10+ team members
+  tags: [Leadership]
+- company: THA
+  role: Data & Donor Engagement Intern
+  dates: Summer 2022
+  bullets:
+    - Cleaned 5,000+ donor records and built Tableau dashboards
+    - Performed segmentation analyses for outreach
+  tags: [Data]
