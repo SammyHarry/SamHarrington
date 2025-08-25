@@ -1,0 +1,26 @@
+name: Sam Harrington
+contact:
+  email: sharrington329@gmail.com
+  phone: '267-322-1543'
+  location: Swarthmore, PA
+education:
+  school: College of William & Mary
+  degree: BA Data Science & Applied Mathematics
+  gpa: 3.97
+  graduation: May 2027
+experience:
+  - company: K1 Investment
+    role: Private Equity Intern
+    dates: Summer 2025
+    bullets:
+      - Analyzed SaaS KPIs (ARR, CAC, churn) for investment decisions
+      - Built components of LBO and DCF models
+  - company: Scooped Homemade Icecream
+    role: Manager
+    dates: May 2022–Present
+    bullets:
+      - Forecasted demand and managed inventory
+      - Tracked daily cash flow and trained 10+ team members
+skills:
+  technical: [Python, SQL, Excel, Tableau, Power BI, Pandas, NumPy, scikit-learn]
+  soft: [Analytical, Strategic, Detail-Oriented, Communicative]

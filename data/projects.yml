@@ -1,0 +1,14 @@
+- title: City Crawl Route App
+  summary: React Native app for real-time crawl routes and rankings
+  stack: [React Native, Firebase, Google Maps API]
+  features:
+    - Real-time routes
+    - Geolocation
+    - Public crawls
+- title: Financial Modeling – Blazeback
+  summary: Built 3-statement and DCF models with sensitivity tables
+  stack: [Excel, Finance]
+  features:
+    - DCF
+    - M&A
+    - Comps
