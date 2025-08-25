@@ -1,53 +1,34 @@
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import Stat from './stat';
+"use client";
 
-const chips = ['Data Science', 'Applied Math', 'Finance', 'React Native', 'AI'];
+import React from "react";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center py-24 text-center">
-      <motion.h1
-        className="text-5xl font-bold mb-4"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        Sam Harrington
-      </motion.h1>
-      <p className="mb-8 text-lg text-neutral-400">
-        Data Science & Applied Math @ William & Mary • Finance + AI • React Native
-      </p>
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
-          {chips.map((c) => (
-            <span key={c} className="rounded-2xl bg-neutral-800 px-3 py-1 text-sm">
-              {c}
-            </span>
-          ))}
+    <section className="py-16">
+      <div className="mx-auto max-w-3xl text-center">
+        <p className="text-sm uppercase tracking-widest text-neutral-400">
+          Data Science • Applied Math • Finance + AI
+        </p>
+        <h1 className="mt-3 text-4xl font-bold tracking-tight">
+          Sam Harrington
+        </h1>
+        <p className="mt-4 text-neutral-300">
+          Building a clean, fast personal site with Next.js 14, TypeScript, and Tailwind.
+        </p>
+        <div className="mt-6 flex items-center justify-center gap-3">
+          <a
+            href="/Sam_Harrington_Resume.pdf"
+            className="rounded-xl border border-neutral-700 px-4 py-2 hover:bg-neutral-800"
+          >
+            Download Resume
+          </a>
+          <a
+            href="mailto:sharrington329@gmail.com"
+            className="rounded-xl bg-white/10 px-4 py-2 hover:bg-white/20"
+          >
+            Email Me
+          </a>
         </div>
-        <div className="flex flex-col gap-4 sm:flex-row">
-        <Link
-          href="/Sam_Harrington_Resume.pdf"
-          className="rounded-md bg-accent px-4 py-2 text-neutral-900"
-        >
-          Download Resume
-        </Link>
-        <Link
-          href="mailto:sharrington329@gmail.com"
-          className="rounded-md border border-accent px-4 py-2"
-        >
-          Email Me
-        </Link>
-        <Link
-          href="https://www.linkedin.com/in/s-harrington011"
-          className="rounded-md border border-accent px-4 py-2"
-        >
-          LinkedIn
-        </Link>
-      </div>
-      <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <Stat label="GPA" value="3.97/4.0" />
-        <Stat label="WSP Coursework" value="In Progress" />
-        <Stat label="Projects" value="2" />
       </div>
     </section>
   );

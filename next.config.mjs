@@ -1,12 +1,14 @@
-import createMDX from '@next/mdx';
+import createMDX from "@next/mdx";
 
-const withMDX = createMDX({});
+// Enable MDX support
+const withMDX = createMDX();
 
-export default withMDX({
-  experimental: {
-    appDir: true,
-  },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
     domains: [],
   },
-});
+  pageExtensions: ["ts", "tsx", "md", "mdx"],
+};
+
+export default withMDX(nextConfig);
