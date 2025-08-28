@@ -21,6 +21,11 @@ experience:
     bullets:
       - Forecasted demand and managed inventory
       - Tracked daily cash flow and trained 10+ team members
+  - company: William & Mary AI Club
+    role: Member
+    dates: 2023–Present
+    bullets:
+      - Collaborate on campus AI projects and discussions
 skills:
-  technical: [Python, SQL, Excel, Tableau, Power BI, Pandas, NumPy, scikit-learn]
-  soft: [Analytical, Strategic, Detail-Oriented, Communicative]
+  technical: [Python, SQL, Excel, Tableau, Power BI, Pandas, NumPy, scikit-learn, Next.js, React, TypeScript, Firebase, Tailwind CSS]
+  soft: [Analytical, Strategic, Detail-Oriented, Communicative, Public online research]

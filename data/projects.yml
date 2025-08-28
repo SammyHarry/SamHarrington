@@ -1,3 +1,11 @@
+- title: ACT Scorecard
+  summary: React/Firebase site tracking Mario Kart tournaments with Elo rankings
+  stack: [React, Firebase]
+  features:
+    - Realtime scorecard
+    - Player analytics
+    - Team builder
+
 - title: City Crawl Route App
   summary: React Native app for real-time crawl routes and rankings
   stack: [React Native, Firebase, Google Maps API]
