@@ -8,6 +8,23 @@ education:
   degree: BA Data Science & Applied Mathematics
   gpa: 3.97
   graduation: May 2027
+training:
+  - title: Wall Street Prep Premium Course
+    items:
+      - Financial Statement Modeling
+      - DCF
+      - M&A
+      - LBO
+      - Trading & Transaction Comps
+  - title: Additional WSP Certifications
+    items:
+      - Real Estate Modeling
+      - Project Finance Modeling
+      - Private Equity Masterclass
+      - Equity Research
+      - FP&A Modeling
+      - Fixed Income
+      - Wealth Management
 experience:
   - company: K1 Investment
     role: Private Equity Intern
