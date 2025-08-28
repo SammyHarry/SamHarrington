@@ -25,24 +25,24 @@ training:
       - FP&A Modeling
       - Fixed Income
       - Wealth Management
-experience:
-  - company: K1 Investment
-    role: Private Equity Intern
-    dates: Summer 2025
-    bullets:
-      - Analyzed SaaS KPIs (ARR, CAC, churn) for investment decisions
-      - Built components of LBO and DCF models
-  - company: Scooped Homemade Icecream
-    role: Manager
-    dates: May 2022–Present
-    bullets:
-      - Forecasted demand and managed inventory
-      - Tracked daily cash flow and trained 10+ team members
-  - company: William & Mary AI Club
-    role: Member
-    dates: 2023–Present
-    bullets:
-      - Collaborate on campus AI projects and discussions
+  experience:
+    - company: K1 Investment
+      role: Private Equity Intern
+      dates: Summer 2025
+      bullets:
+        - Analyzed SaaS KPIs (ARR, CAC, churn) and flagged a $2M churn risk for investment committee review
+        - Built components of LBO and DCF models for potential deals
+    - company: Scooped Homemade Icecream
+      role: Manager
+      dates: May 2022–Present
+      bullets:
+        - Produced and quality-checked 200 gallons of ice cream weekly while managing 16 rotation spots from 168+ flavors
+        - Scheduled and trained 10–12 employees, improving coverage and cutting labor costs 12%
+    - company: William & Mary AI Club
+      role: Member
+      dates: 2023–Present
+      bullets:
+        - Collaborate on campus AI projects and discussions
 skills:
   technical: [Python, SQL, Excel, Tableau, Power BI, Pandas, NumPy, scikit-learn, Next.js, React, TypeScript, Firebase, Tailwind CSS]
   soft: [Analytical, Strategic, Detail-Oriented, Communicative, Public online research]
