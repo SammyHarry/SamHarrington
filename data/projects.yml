@@ -1,22 +1,31 @@
-- title: ACT Scorecard
-  summary: React/Firebase site tracking Mario Kart tournaments with Elo rankings
-  stack: [React, Firebase]
+- title: All Cup Tour
+  summary: Public website for Mario Kart tournaments with Elo rankings
+  stack: [Next.js, Firebase]
   features:
-    - Realtime scorecard
-    - Player analytics
-    - Team builder
+    - Built and shipped a live site at allcuptour.com
+    - Frontend development with Next.js and Firebase hosting
+    - Collaborated with a team to launch quickly
 
-- title: City Crawl Route App
-  summary: React Native app for real-time crawl routes and rankings
-  stack: [React Native, Firebase, Google Maps API]
+- title: AI Handwritten Scorecard Reader
+  summary: Pipeline that digitizes Mario Kart race scorecards and exports results
+  stack: [Python, FastAPI, Docker, PaddleOCR]
   features:
-    - Real-time routes
-    - Geolocation
-    - Public crawls
-- title: Financial Modeling – Blazeback
-  summary: Built 3-statement and DCF models with sensitivity tables
+    - Recognizes handwritten scorecards via OCR
+    - Parses race results and pushes them to Excel
+    - Containerized with Docker for easy deployment
+
+- title: Crawler App
+  summary: React Native social platform for sharing nightlife routes
+  stack: [React Native, Expo Router, Firebase, Google Places API]
+  features:
+    - Real-time route sharing and rankings
+    - Firebase Auth + Firestore backend
+    - Designed for community growth and collaboration
+
+- title: Equity Research Reports
+  summary: Built models, forecasts, and reports on high-growth companies
   stack: [Excel, Finance]
   features:
-    - DCF
-    - M&A
-    - Comps
+    - DCF and comparables valuation
+    - Financial modeling in Excel
+    - Clear investment research reports
