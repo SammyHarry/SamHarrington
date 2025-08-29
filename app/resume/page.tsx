@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import yaml from 'yaml';
+import Link from 'next/link';
 import SectionHeader from '@/components/section-header';
 
 export default function ResumePage() {
@@ -43,14 +44,14 @@ export default function ResumePage() {
               </div>
             </div>
           ))}
-          <a
+          <Link
             href="/Transcript.pdf"
             className="mt-4 inline-block text-accent underline"
             target="_blank"
             rel="noopener noreferrer"
           >
             View Transcript (PDF)
-          </a>
+          </Link>
         </div>
       </div>
       <div className="mt-8 space-y-6">
