@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test": "jest",
+    "dev:test": "GITHUB_PAGES=true BASE_PATH=/SamHarrington next dev",
+    "build:test": "GITHUB_PAGES=true BASE_PATH=/SamHarrington next build",
+    "preview": "python3 -m http.server 3001 --directory out"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
