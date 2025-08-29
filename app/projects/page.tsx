@@ -1,5 +1,6 @@
 import SectionHeader from '@/components/section-header';
-import ProjectCard, { getProjects } from '@/components/project-card';
+import ProjectCard from '@/components/project-card';
+import { getProjects } from '@/lib/projects';
 
 export default function ProjectsPage() {
   const projects = getProjects();

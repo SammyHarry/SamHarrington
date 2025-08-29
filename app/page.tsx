@@ -1,6 +1,7 @@
 import Hero from '@/components/hero';
 import SectionHeader from '@/components/section-header';
-import ProjectCard, { getProjects } from '@/components/project-card';
+import ProjectCard from '@/components/project-card';
+import { getProjects } from '@/lib/projects';
 
 export default function HomePage() {
   const projects = getProjects().slice(0, 2);

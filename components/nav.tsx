@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import ThemeToggle from '@/components/theme-toggle';
 
 const links = [
   { href: '/', label: 'Home' },
@@ -24,9 +25,14 @@ export default function Nav() {
     <header className="sticky top-0 z-50 bg-neutral-900/80 backdrop-blur supports-[backdrop-filter]:bg-neutral-900/60">
       <nav className="container mx-auto flex items-center justify-between px-4 py-4">
         <Link href="/" className="font-bold">Sam Harrington</Link>
-        <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+        <div className="flex items-center gap-3">
+          <div className="hidden md:block">
+            <ThemeToggle />
+          </div>
+          <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           {open ? <X /> : <Menu />}
-        </button>
+          </button>
+        </div>
         <ul className="hidden md:flex gap-6">
           {links.map((l) => (
             <li key={l.href}>
@@ -51,6 +57,9 @@ export default function Nav() {
               </Link>
             </li>
           ))}
+          <li>
+            <ThemeToggle />
+          </li>
         </ul>
       )}
     </header>
