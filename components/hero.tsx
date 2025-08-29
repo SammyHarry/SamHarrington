@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -38,12 +39,12 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.35, duration: 0.5 }}
         >
-          <a
+          <Link
             href="/Sam_Harrington_Resume.pdf"
             className="rounded-xl border border-neutral-700 px-4 py-2 hover:bg-neutral-800"
           >
             Download Resume
-          </a>
+          </Link>
           <a
             href="mailto:sharrington329@gmail.com"
             className="rounded-xl bg-white/10 px-4 py-2 hover:bg-white/20"
