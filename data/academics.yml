@@ -1,0 +1,76 @@
+profile:
+  school: "William & Mary"
+  degree: "Bachelor of Science in Data Science (AI Concentration) and Applied Mathematics (accelerated three-year plan)"
+  gpa: "3.97 / 4.0"
+  deans_list: ["Fall 2024", "Spring 2025"]
+  transfer_ap_credits: 32
+  completed_credits: 36
+
+transfer_ap:
+  - category: "Computer Science"
+    items: ["Concepts in CS", "Computational Problem Solving"]
+  - category: "Economics"
+    items: ["Microeconomics", "Macroeconomics"]
+  - category: "Math"
+    items: ["Probability/Statistics", "Calculus I & II"]
+  - category: "Physics"
+    items: ["General Physics I & II (Lecture, Lab, Problem Solving)"]
+
+terms:
+  - title: "Fall 2024"
+    gpa: "4.0"
+    courses:
+      - code: "CSCI 241"
+        name: "Data Structures"
+        grade: "A"
+      - code: "DATA 201"
+        name: "Intro to Data Science"
+        grade: "A"
+      - code: "MATH 211"
+        name: "Linear Algebra"
+        grade: "A"
+      - code: "DANC 100"
+        name: "Movement as Communication"
+        grade: "A"
+      - code: "FMST 150"
+        name: "Writing about Film"
+        grade: "A"
+
+  - title: "Spring 2025"
+    gpa: "3.95"
+    courses:
+      - code: "MATH 213"
+        name: "Multivariable Calculus"
+        grade: "A"
+      - code: "MATH 214"
+        name: "Foundations of Math"
+        grade: "A"
+      - code: "PHIL 303"
+        name: "Ethics"
+        grade: "A-"
+      - code: "HIST 212"
+        name: "History of the Holocaust"
+        grade: "A"
+      - code: "THEA 200"
+        name: "Introduction to Theatre"
+        grade: "A"
+      - code: "APIA 205"
+        name: "Approaches to APIA Studies"
+        grade: "A"
+
+in_progress:
+  term: "Fall 2025"
+  courses:
+    - code: "CSCI 232"
+      name: "Competitive Programming"
+    - code: "DATA 301"
+      name: "Applied Machine Learning"
+    - code: "DATA 302"
+      name: "Databases"
+    - code: "MATH 311H"
+      name: "Honors Real Analysis"
+    - code: "MATH 451"
+      name: "Probability"
+    - code: "THEA 460"
+      name: "Practice as Research"
+

@@ -1,0 +1,103 @@
+import fs from 'fs';
+import path from 'path';
+import yaml from 'yaml';
+import SectionHeader from '@/components/section-header';
+
+type Profile = {
+  school: string;
+  degree: string;
+  gpa: string;
+  deans_list?: string[];
+  transfer_ap_credits?: number;
+  completed_credits?: number;
+};
+
+type Course = { code: string; name: string; grade?: string };
+type Term = { title: string; gpa?: string; courses: Course[] };
+
+export default function AcademicsPage() {
+  const file = fs.readFileSync(path.join(process.cwd(), 'data', 'academics.yml'), 'utf8');
+  const data = yaml.parse(file) as {
+    profile: Profile;
+    transfer_ap: { category: string; items: string[] }[];
+    terms: Term[];
+    in_progress?: { term: string; courses: Course[] };
+  };
+
+  const { profile, transfer_ap, terms, in_progress } = data;
+
+  return (
+    <div className="py-16">
+      <SectionHeader eyebrow="Academics" title="Academic Profile" />
+
+      <div className="rounded-2xl border border-white/5 bg-neutral-800/70 p-5">
+        <h3 className="text-lg font-semibold gradient-text">{profile.school}</h3>
+        <p className="text-neutral-300 mt-1">{profile.degree}</p>
+        <div className="mt-3 flex flex-wrap gap-2 text-sm">
+          <span className="rounded-lg bg-neutral-700/60 px-2 py-1">GPA: {profile.gpa}</span>
+          {typeof profile.completed_credits !== 'undefined' && (
+            <span className="rounded-lg bg-neutral-700/60 px-2 py-1">Completed: {profile.completed_credits} credits</span>
+          )}
+          {typeof profile.transfer_ap_credits !== 'undefined' && (
+            <span className="rounded-lg bg-neutral-700/60 px-2 py-1">Transfer & AP: {profile.transfer_ap_credits} credits</span>
+          )}
+          {profile.deans_list?.map((d) => (
+            <span key={d} className="rounded-lg bg-emerald-700/50 px-2 py-1">Dean’s List: {d}</span>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-10">
+        <SectionHeader eyebrow="Completed" title="Terms & Courses" />
+        <div className="space-y-8">
+          {terms.map((term) => (
+            <section key={term.title} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-5">
+              <div className="flex items-baseline justify-between gap-2">
+                <h4 className="text-lg font-semibold">{term.title}</h4>
+                {term.gpa && <span className="text-sm text-neutral-400">Term GPA: {term.gpa}</span>}
+              </div>
+              <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                {term.courses.map((c) => (
+                  <div key={c.code + c.name} className="rounded-xl border border-neutral-700 p-3">
+                    <p className="font-medium">{c.code} — {c.name}</p>
+                    {c.grade && <p className="text-sm text-neutral-400">Grade: {c.grade}</p>}
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      </div>
+
+      {in_progress && (
+        <div className="mt-10">
+          <SectionHeader eyebrow="In Progress" title={in_progress.term} />
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            {in_progress.courses.map((c) => (
+              <div key={c.code + c.name} className="rounded-xl border border-neutral-700 p-3">
+                <p className="font-medium">{c.code} — {c.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div className="mt-10">
+        <SectionHeader eyebrow="Transfer & AP" title="Credit Summary" />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {transfer_ap.map((cat) => (
+            <div key={cat.category} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4">
+              <h5 className="font-semibold">{cat.category}</h5>
+              <ul className="mt-2 list-disc pl-5 text-sm text-neutral-300">
+                {cat.items.map((i) => (
+                  <li key={i}>{i}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
