@@ -1,0 +1,10 @@
+courses:
+  - key: math-214
+    title: "MATH 214: Foundation of Mathematics"
+    note: "Proof writing, logic, sets, induction"
+  - key: ethics-303
+    title: "ETHICS 303"
+  - key: hist-212
+    title: "HIST 212"
+  - key: thea-200
+    title: "THEA 200"
