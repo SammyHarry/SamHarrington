@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import yaml from 'yaml';
+import Link from 'next/link';
 import SectionHeader from '@/components/section-header';
 
 interface Writing {
@@ -19,9 +20,9 @@ export default function WritingPage() {
         {writings.map((w) => (
           <li key={w.title}>
             <h3 className="text-xl font-semibold">
-              <a href={w.link} className="hover:underline" target="_blank" rel="noreferrer">
+              <Link href={w.link} className="hover:underline" target="_blank" rel="noreferrer">
                 {w.title}
-              </a>
+              </Link>
             </h3>
             <p className="text-neutral-400">{w.description}</p>
           </li>
