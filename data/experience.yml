@@ -5,6 +5,15 @@
     - Professional development and networking with alumni and industry mentors
     - Selected cohort focused on finance, markets, and career skills
   tags: [Leadership]
+- company: The Flat Hat (William & Mary)
+  role: Webmaster
+  dates: TBD
+  bullets:
+    - Managed the newspaper’s WordPress-powered website and timely publishing of articles and multimedia
+    - Customized themes, layouts, and plugins to maintain branding and improve usability
+    - Worked with SQL databases to manage content, troubleshoot backend issues, and optimize performance
+    - Collaborated with editors to streamline digital workflows and ensure reliable, accessible publishing
+  tags: [WordPress, Web, SQL, Operations]
 - company: Sigma Pi Fraternity
   role: Housing Manager
   dates: 2025–2026

@@ -34,6 +34,14 @@ training:
       - "ERC™ 8: Professional Soft Skills"
       - "Bonus: Breaking Into Research"
 experience:
+  - company: The Flat Hat (William & Mary)
+    role: Webmaster
+    dates: TBD
+    bullets:
+      - Managed the newspaper’s WordPress-powered website and timely publishing of articles and multimedia
+      - Customized themes, layouts, and plugins to maintain branding and improve usability
+      - Worked with SQL databases to manage content, troubleshoot backend issues, and optimize performance
+      - Collaborated with editors to streamline digital workflows and ensure reliable, accessible publishing
   - company: Dog Street to Wall Street Ambassador — William & Mary
     role: Ambassador (Selective Program)
     dates: 2025–Present
