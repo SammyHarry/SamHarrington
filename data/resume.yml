@@ -5,44 +5,53 @@ contact:
   location: Swarthmore, PA
 education:
   school: College of William & Mary
-  degree: BA Data Science & Applied Mathematics
+  degree: Applied Mathematics & Data Science (AI Track) — Minor in Finance
   gpa: 3.97
-  graduation: May 2027
+  graduation: May 2027 (accelerated 3-year plan)
 training:
-  - title: Wall Street Prep Premium Course
+  - title: Wall Street Prep Premium Package — Financial & Valuation Modeling (Certificate, July 2025)
     items:
       - Financial Statement Modeling
-      - DCF
-      - M&A
-      - LBO
-      - Trading & Transaction Comps
-  - title: Additional WSP Certifications
+      - DCF Modeling
+      - M&A Modeling
+      - LBO Modeling
+      - Trading Comps Modeling
+      - Transaction Comps Modeling
+      - Accounting & Financial Statement Analysis
+      - Excel Basics (Mac) + Crash Course
+  - title: Project Finance Modeling
     items:
-      - Real Estate Modeling
-      - Project Finance Modeling
-      - Private Equity Masterclass
-      - Equity Research
-      - FP&A Modeling
-      - Fixed Income
-      - Wealth Management
+      - Modules 1–3 completed
+  - title: Certification in Sell-Side Equity Research (ERC™, August 2025)
+    items:
+      - "ERC™ 1: Equity Research Process"
+      - "ERC™ 2: Financial Statement Analysis"
+      - "ERC™ 3: Thesis & Due Diligence"
+      - "ERC™ 4: Writing Research Reports"
+      - "ERC™ 5: Financial Statement Modeling"
+      - "ERC™ 6: Relative Valuation"
+      - "ERC™ 7: Intrinsic Valuation"
+      - "ERC™ 8: Professional Soft Skills"
+      - "Bonus: Breaking Into Research"
 experience:
-  - company: K1 Investment
-    role: Private Equity Intern
-    dates: Summer 2025
+  - company: Dog Street to Wall Street Ambassador — William & Mary
+    role: Ambassador (Selective Program)
+    dates: 2025–Present
     bullets:
-      - Analyzed SaaS KPIs (ARR, CAC, churn) and flagged a $2M churn risk for investment committee review
-      - Built components of LBO and DCF models for potential deals
-  - company: Scooped Homemade Icecream
-    role: Manager
-    dates: May 2022–Present
+      - Professional development and networking with industry mentors and alumni
+      - Selected based on academic performance and initiative
+  - company: Sigma Pi Fraternity
+    role: Housing Manager
+    dates: 2025–2026
     bullets:
-      - Produced and quality-checked 200 gallons of ice cream weekly while managing 16 rotation spots from 168+ flavors
-      - Scheduled and trained 10–12 employees, improving coverage and cutting labor costs 12%
-  - company: William & Mary AI Club
-    role: Member
-    dates: 2023–Present
+      - Managed housing operations, contracts, and community agreements for members
+      - Coordinated maintenance, budgeting, and stakeholder communication
+  - company: Scooped Homemade Ice Cream
+    role: Manager (pre-college)
+    dates: 2022–2023
     bullets:
-      - Collaborate on campus AI projects and discussions
+      - Produced ~200 gallons weekly; managed 16 flavors/day from 160+ rotation
+      - Scheduled and supervised staff; improved coverage and cut labor costs ~12%
 skills:
   technical: [Python, SQL, Excel, Tableau, Power BI, Pandas, NumPy, scikit-learn, Next.js, React, TypeScript, Firebase, Tailwind CSS]
-  soft: [Analytical, Strategic, Detail-Oriented, Communicative, Public online research]
+  soft: [Motivated, Community-oriented, Kindness, Accountability, Humility, Achievement, Ambition]

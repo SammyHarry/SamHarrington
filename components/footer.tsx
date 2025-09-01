@@ -7,7 +7,9 @@ export default function Footer() {
         <p className="text-neutral-400">© {new Date().getFullYear()} Sam Harrington</p>
         <div className="flex gap-4">
           <Link href="https://www.linkedin.com/in/s-harrington011" className="hover:text-accent">LinkedIn</Link>
+          <Link href="https://github.com/SammyHarry" className="hover:text-accent">GitHub</Link>
           <Link href="mailto:sharrington329@gmail.com" className="hover:text-accent">Email</Link>
+          <Link href="mailto:seharrington@wm.edu" className="hover:text-accent">WM Email</Link>
         </div>
       </div>
     </footer>

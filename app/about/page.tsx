@@ -15,32 +15,32 @@ export default function AboutPage() {
   ];
 
   const softSkills = [
-    { name: 'Leadership & Decision-Making', from: 'Ice Cream Shop Manager' },
-    { name: 'Independence & Initiative', from: 'coding projects and research' },
-    { name: 'Problem-Solving', from: 'crawler bugs, AI OCR pipeline, equity models' },
-    { name: 'Team Collaboration', from: 'Crawler team, All Cup Tour, housing manager' },
-    { name: 'Adaptability', from: 'internship projects, rapid learning new stacks' },
-    { name: 'Communication', from: 'ethics papers, history research, presentations' },
-    { name: 'Community Building', from: 'Sigma Pi fraternity, small acts of kindness' },
-    { name: 'Persistence & Work Ethic', from: '3-year graduation plan' },
+    { name: 'Leadership & Decision-Making', from: 'Housing Manager, D2W Ambassador' },
+    { name: 'Independence & Initiative', from: 'self-driven projects and research' },
+    { name: 'Problem-Solving', from: 'crawler bugs, AI OCR pipeline, analytics' },
+    { name: 'Team Collaboration', from: 'Crawler, All Cup Tour, fraternity leadership' },
+    { name: 'Adaptability', from: 'fast learning across stacks and domains' },
+    { name: 'Communication', from: 'ethics/history papers and presentations' },
+    { name: 'Community Building', from: 'fraternity & campus involvement' },
+    { name: 'Persistence & Work Ethic', from: 'accelerated 3-year graduation plan' },
   ];
 
   const interests = [
-    'Being in nature (hiking national parks)',
-    'Rock climbing',
-    'Wrestling',
-    'Ice cream',
-    'Hanging out with friends & building community',
+    'Climbing & bouldering',
+    'Running & hiking national parks',
+    'Philly sports',
     'Lifelong learning (finance, AI, data science)',
+    'Friends, community, and being outdoors',
   ];
 
   return (
     <div className="space-y-12 py-16">
       <SectionHeader eyebrow="About" title="Who I Am" />
       <p className="text-neutral-300">
-        I&apos;m Sam Harrington, a curious and driven student studying Data Science and Applied
-        Mathematics at William & Mary. I enjoy building models and products that solve
-        real problems, with a people-first mindset and a love for learning.
+        I&apos;m Sam Harrington — a motivated learner and the hardest worker in the room.
+        I study Applied Mathematics & Data Science (AI Track) with a Finance minor at
+        William & Mary, graduating on an accelerated 3-year plan (May 2027).
+        I love building data-driven products and models that make a tangible impact.
       </p>
       <div className="grid gap-8 md:grid-cols-2">
         <SkillPills title="Technical Skills" skills={technicalSkills} />
@@ -51,6 +51,14 @@ export default function AboutPage() {
         <ul className="mt-4 list-disc pl-5 space-y-2 text-neutral-300">
           {interests.map((i) => (
             <li key={i}>{i}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <SectionHeader eyebrow="Values" title="What I Stand For" />
+        <ul className="mt-4 list-disc pl-5 space-y-2 text-neutral-300">
+          {['Kindness', 'Accountability', 'Humility', 'Achievement', 'Ambition'].map((v) => (
+            <li key={v}>{v}</li>
           ))}
         </ul>
       </div>

@@ -31,7 +31,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25, duration: 0.5 }}
         >
-          Building a clean, fast personal site with Next.js 14, TypeScript, and Tailwind.
+          Curious and driven Data Science & Applied Math student (Finance minor) at William & Mary — graduating May 2027 on an accelerated 3-year plan (GPA 3.97/4.0).
         </motion.p>
         <motion.div
           className="mt-6 flex items-center justify-center gap-3"
@@ -52,7 +52,7 @@ export default function Hero() {
             Email Me
           </a>
           <a
-            href="https://github.com/" aria-label="GitHub"
+            href="https://github.com/SammyHarry" aria-label="GitHub"
             className="rounded-xl border border-neutral-700/60 p-2 hover:bg-neutral-800/60"
           >
             <Github size={18} />

@@ -1,29 +1,21 @@
-- company: K1 Investment
-  role: Private Equity Intern
-  dates: Summer 2025
+- company: Dog Street to Wall Street (William & Mary)
+  role: Ambassador (Selective Program)
+  dates: 2025–Present
   bullets:
-    - Analyzed SaaS KPIs (ARR, CAC, churn) and flagged a $2M churn risk that influenced IC discussions
-    - Built components of LBO and DCF models for potential deals
-    - Performed market comps and usability testing on SaaS platforms
-  tags: [Finance, Modeling]
-- company: Scooped Homemade Icecream
-  role: Manager
-  dates: May 2022–Present
-  bullets:
-    - Produced and quality-checked 200 gallons of ice cream weekly while managing 16 rotation spots from 168+ flavors
-    - Scheduled and trained 10–12 employees, improving coverage and reducing labor costs 12%
+    - Professional development and networking with alumni and industry mentors
+    - Selected cohort focused on finance, markets, and career skills
   tags: [Leadership]
-- company: THA
-  role: Data & Donor Engagement Intern
-  dates: Summer 2022
+- company: Sigma Pi Fraternity
+  role: Housing Manager
+  dates: 2025–2026
   bullets:
-    - Cleaned 5,000+ donor records and built Tableau dashboards
-    - Performed segmentation analyses for outreach
-  tags: [Data]
-
-- company: William & Mary AI Club
-  role: Member
-  dates: 2023–Present
+    - Managed fraternity housing operations, contracts, and community agreements
+    - Coordinated maintenance, budgeting, and communication with stakeholders
+  tags: [Leadership]
+- company: Scooped Homemade Ice Cream
+  role: Manager (pre-college)
+  dates: 2022–2023
   bullets:
-    - Collaborate on AI projects and discussions
-  tags: [Club]
+    - Produced ~200 gallons weekly; managed 16 flavors/day from a 160+ rotation
+    - Scheduled and trained staff; improved coverage and reduced labor costs ~12%
+  tags: [Operations]

@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import type { Project } from '@/lib/projects';
+import { Github, ExternalLink } from 'lucide-react';
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
@@ -28,6 +29,30 @@ export default function ProjectCard({ project }: { project: Project }) {
           <li key={f}>{f}</li>
         ))}
       </ul>
+      {(project.github || project.link) && (
+        <div className="mt-4 flex gap-3">
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 rounded-md border border-neutral-700 px-2 py-1 text-sm hover:bg-neutral-800"
+            >
+              <ExternalLink size={14} /> Live
+            </a>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 rounded-md border border-neutral-700 px-2 py-1 text-sm hover:bg-neutral-800"
+            >
+              <Github size={14} /> GitHub
+            </a>
+          )}
+        </div>
+      )}
     </motion.div>
   );
 }

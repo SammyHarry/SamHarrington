@@ -1,18 +1,19 @@
-- title: All Cup Tour
-  summary: Public website for Mario Kart tournaments with Elo rankings
+- title: All Cup Tour Website
+  summary: Public site for Mario Kart tournaments with ELO rankings
   stack: [Next.js, Firebase]
+  link: https://allcuptour.com
   features:
-    - Built and shipped a live site at allcuptour.com
-    - Frontend development with Next.js and Firebase hosting
+    - Built and shipped a live site (allcuptour.com)
+    - Frontend development with Next.js and Firebase Hosting
     - Collaborated with a team to launch quickly
 
-- title: AI Handwritten Scorecard Reader
-  summary: Pipeline that digitizes Mario Kart race scorecards and exports results
+- title: ACT_AI — Scorecard OCR Pipeline
+  summary: AI-powered pipeline for parsing handwritten scorecards end-to-end
   stack: [Python, FastAPI, Docker, PaddleOCR]
   features:
-    - Recognizes handwritten scorecards via OCR
-    - Parses race results and pushes them to Excel
-    - Containerized with Docker for easy deployment
+    - Recognizes handwritten scorecards via OCR (PaddleOCR)
+    - Parses race results and exports structured outputs
+    - Containerized with Docker for reproducible deployment
 
 - title: Crawler App
   summary: React Native social platform for sharing nightlife routes
@@ -22,10 +23,18 @@
     - Firebase Auth + Firestore backend
     - Designed for community growth and collaboration
 
-- title: Equity Research Reports
-  summary: Built models, forecasts, and reports on high-growth companies
-  stack: [Excel, Finance]
+- title: ACT Scorecard (Analytics Platform)
+  summary: Mario Kart tournament analytics (ELO, VR formulas, scorecard parsing)
+  stack: [Next.js, Firestore]
   features:
-    - DCF and comparables valuation
-    - Financial modeling in Excel
-    - Clear investment research reports
+    - ELO rating system and VR computations
+    - Scorecard parsing and player history
+    - Clean UI built with Next.js
+
+- title: Personal Website
+  summary: Next.js 14 + Tailwind portfolio (this site)
+  stack: [Next.js, TypeScript, Tailwind CSS]
+  features:
+    - App Router, server components, MDX notes
+    - Data-driven pages via YAML content files
+    - Responsive, fast, and accessible

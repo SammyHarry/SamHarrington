@@ -12,6 +12,8 @@ const links = [
   { href: '/experience', label: 'Experience' },
     { href: '/projects', label: 'Projects' },
     { href: '/writing', label: 'Writing' },
+    { href: '/certifications', label: 'Certifications' },
+    { href: '/genai', label: 'GenAI (16/93)' },
     { href: '/awards', label: 'Awards' },
     { href: '/resume', label: 'Resume' },
   { href: '/contact', label: 'Contact' },

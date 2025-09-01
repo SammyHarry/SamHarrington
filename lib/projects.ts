@@ -7,10 +7,11 @@ export interface Project {
   summary: string;
   stack: string[];
   features: string[];
+  link?: string;
+  github?: string;
 }
 
 export function getProjects(): Project[] {
   const file = fs.readFileSync(path.join(process.cwd(), 'data', 'projects.yml'), 'utf8');
   return yaml.parse(file) as Project[];
 }
-
