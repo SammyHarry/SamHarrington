@@ -1,52 +1,37 @@
 completion: 16
 total: 16
+description: >
+  16 AI Things in 93 Days is a self‑paced, hands‑on learning experience for William & Mary staff, faculty, and community members. Inspired by the “23 things” model—and playfully named after W&M’s founding year—this program offers 16 short lessons exploring topics like text generation, image creation, ethics, and practical uses of generative AI. Grounded in a human‑centered approach, the program encourages thoughtful engagement with the technology. Participants can start anytime between July 8 and October 9 and complete as many “things” as they like.
 items:
-  - title: Thing 1
+  - title: "What is Generative AI?"
     status: completed
-    link: "/notes"
-  - title: Thing 2
+  - title: "AI 101: What’s under the hood?"
     status: completed
-    link: "/notes"
-  - title: Thing 3
+  - title: "AI and human smarts: Let’s compare"
     status: completed
-    link: "/notes"
-  - title: Thing 4
+  - title: "GenAI concerns"
     status: completed
-    link: "/notes"
-  - title: Thing 5
+  - title: "Prompt power: Make AI work for you"
     status: completed
-    link: "/notes"
-  - title: Thing 6
+  - title: "Choosing the right AI tool"
     status: completed
-    link: "/notes"
-  - title: Thing 7
+  - title: "Whose voices? Accessibility in AI"
     status: completed
-    link: "/notes"
-  - title: Thing 8
+  - title: "Your ethical AI use"
     status: completed
-    link: "/notes"
-  - title: Thing 9
+  - title: "GenAI and creative and intellectual work"
     status: completed
-    link: "/notes"
-  - title: Thing 10
+  - title: "How AI was created and why it matters"
     status: completed
-    link: "/notes"
-  - title: Thing 11
+  - title: "Fact‑checking and AI hallucinations/mirages"
     status: completed
-    link: "/notes"
-  - title: Thing 12
+  - title: "Generating images"
     status: completed
-    link: "/notes"
-  - title: Thing 13
+  - title: "How are people using AI now"
     status: completed
-    link: "/notes"
-  - title: Thing 14
+  - title: "AIs and brain damage?"
     status: completed
-    link: "/notes"
-  - title: Thing 15
+  - title: "Create your own Google Gem (chatbot)"
     status: completed
-    link: "/notes"
-  - title: Thing 16
+  - title: "Looking back, thinking forward"
     status: completed
-    link: "/notes"
-
