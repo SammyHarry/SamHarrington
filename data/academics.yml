@@ -67,10 +67,11 @@ in_progress:
       name: "Applied Machine Learning"
     - code: "DATA 302"
       name: "Databases"
+    - code: "DATA 303"
+      name: "Data Visualization"
     - code: "MATH 311H"
       name: "Honors Real Analysis"
     - code: "MATH 451"
       name: "Probability"
     - code: "THEA 460"
       name: "Practice as Research"
-

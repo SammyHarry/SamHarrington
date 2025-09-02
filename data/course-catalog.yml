@@ -14,6 +14,9 @@ courses:
   - code: "DATA 302"
     name: "Databases"
     description: "Relational modeling, SQL, normalization, indexing, transactions, and intro to ORMs."
+  - code: "DATA 303"
+    name: "Data Visualization"
+    description: "Chart design, visual encoding, storytelling, dashboards, and tools like Altair/Tableau."
   - code: "MATH 211"
     name: "Linear Algebra"
     description: "Vector spaces, linear maps, eigenvalues/eigenvectors, orthogonality, and applications."
@@ -53,4 +56,3 @@ courses:
   - code: "OTHER"
     name: "Other"
     description: "Additional academic work not yet categorized."
-
