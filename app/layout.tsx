@@ -3,7 +3,6 @@ import { ReactNode } from 'react';
 import { Metadata, Viewport } from 'next';
 import Nav from '@/components/nav';
 import Footer from '@/components/footer';
-import { Providers } from '@/components/theme-provider';
 import Background from '@/components/background';
 
 export const metadata: Metadata = {
@@ -35,13 +34,11 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-white text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100">
-        <Providers>
-          <Background />
-          <Nav />
-          <main className="container mx-auto px-4">{children}</main>
-          <Footer />
-        </Providers>
+      <body className="bg-neutral-900 text-neutral-100">
+        <Background />
+        <Nav />
+        <main className="container mx-auto px-4">{children}</main>
+        <Footer />
       </body>
     </html>
   );

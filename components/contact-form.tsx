@@ -19,9 +19,9 @@ export default function ContactForm({ action }: Props) {
   if (action) {
     return (
       <form action={formAction} onSubmit={() => setLoading(true)} className="space-y-4">
-        <input type="text" name="name" placeholder="Name" required className="w-full rounded-md border dark:border-neutral-700 border-neutral-300 dark:bg-neutral-800 bg-white p-2" />
-        <input type="email" name="email" placeholder="Email" required className="w-full rounded-md border dark:border-neutral-700 border-neutral-300 dark:bg-neutral-800 bg-white p-2" />
-        <textarea name="message" placeholder="Message" required className="w-full rounded-md border dark:border-neutral-700 border-neutral-300 dark:bg-neutral-800 bg-white p-2" />
+        <input type="text" name="name" placeholder="Name" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" />
+        <input type="email" name="email" placeholder="Email" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" />
+        <textarea name="message" placeholder="Message" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" />
         <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
         <button type="submit" disabled={loading} className="rounded-md bg-accent px-4 py-2 text-neutral-900">
           {loading ? 'Sending...' : 'Send'}
@@ -48,9 +48,9 @@ export default function ContactForm({ action }: Props) {
       }}
       className="space-y-4"
     >
-      <input type="text" name="name" placeholder="Name" required className="w-full rounded-md border dark:border-neutral-700 border-neutral-300 dark:bg-neutral-800 bg-white p-2" />
-      <input type="email" name="email" placeholder="Email" required className="w-full rounded-md border dark:border-neutral-700 border-neutral-300 dark:bg-neutral-800 bg-white p-2" />
-      <textarea name="message" placeholder="Message" required className="w-full rounded-md border dark:border-neutral-700 border-neutral-300 dark:bg-neutral-800 bg-white p-2" />
+      <input type="text" name="name" placeholder="Name" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" />
+      <input type="email" name="email" placeholder="Email" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" />
+      <textarea name="message" placeholder="Message" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" />
       <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
       <button type="submit" className="rounded-md bg-accent px-4 py-2 text-neutral-900">Email Me</button>
     </form>

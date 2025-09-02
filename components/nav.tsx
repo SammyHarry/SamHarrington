@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import ThemeToggle from '@/components/theme-toggle';
 
 const primaryLinks = [
   { href: '/', label: 'Home' },
@@ -30,13 +29,10 @@ export default function Nav() {
   const path = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 dark:bg-neutral-900/80 bg-white/80 backdrop-blur supports-[backdrop-filter]:dark:bg-neutral-900/60 supports-[backdrop-filter]:bg-white/60">
+    <header className="sticky top-0 z-50 bg-neutral-900/80 backdrop-blur supports-[backdrop-filter]:bg-neutral-900/60">
       <nav className="container mx-auto flex items-center justify-between px-4 py-4">
         <Link href="/" className="font-bold">Sam Harrington</Link>
         <div className="flex items-center gap-3">
-          <div className="hidden md:block">
-            <ThemeToggle />
-          </div>
           <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           {open ? <X /> : <Menu />}
           </button>
@@ -67,13 +63,13 @@ export default function Nav() {
               More <ChevronDown size={16} />
             </button>
             {moreOpen && (
-              <div className="absolute right-0 mt-2 w-44 rounded-xl border dark:border-neutral-800 border-neutral-200 dark:bg-neutral-900/95 bg-white p-2 shadow-xl">
+              <div className="absolute right-0 mt-2 w-44 rounded-xl border border-neutral-800 bg-neutral-900/95 p-2 shadow-xl">
                 {moreLinks.map((l) => (
                   <Link
                     key={l.href}
                     href={l.href}
                     className={`block rounded-md px-3 py-2 text-sm transition-colors ${
-                      path === l.href ? 'dark:bg-neutral-800 bg-neutral-100 text-accent' : 'dark:hover:bg-neutral-800 hover:bg-neutral-100'
+                      path === l.href ? 'bg-neutral-800 text-accent' : 'hover:bg-neutral-800'
                     }`}
                   >
                     {l.label}
@@ -93,9 +89,6 @@ export default function Nav() {
               </Link>
             </li>
           ))}
-          <li>
-            <ThemeToggle />
-          </li>
         </ul>
       )}
     </header>
