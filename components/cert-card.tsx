@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import { Award, ExternalLink } from 'lucide-react';
 
 export type Cert = {
   group: string;
@@ -20,12 +21,15 @@ export default function CertCard({ cert }: { cert: Cert }) {
       whileHover={{ y: -2 }}
       transition={{ duration: 0.4 }}
     >
-      <div className="flex items-baseline justify-between gap-2">
-        <h3 className="text-lg font-semibold gradient-text">{cert.group}</h3>
-        {cert.date && <span className="text-xs text-neutral-400">{cert.date}</span>}
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex items-center gap-2">
+          <span className="text-neutral-400"><Award size={18} /></span>
+          <h3 className="text-lg font-semibold gradient-text">{cert.group}</h3>
+        </div>
+        {cert.date && <span className="rounded-full border border-neutral-700 px-2 py-0.5 text-[10px] uppercase tracking-wide text-neutral-400">{cert.date}</span>}
       </div>
       {cert.credential && (
-        <p className="mt-1 text-sm text-neutral-300">{cert.credential}</p>
+        <p className="mt-2 text-sm text-neutral-300">{cert.credential}</p>
       )}
       {cert.items && (
         <ul className="mt-3 list-disc pl-5 text-sm text-neutral-300">
@@ -39,12 +43,12 @@ export default function CertCard({ cert }: { cert: Cert }) {
           href={cert.link}
           target="_blank"
           rel="noreferrer"
-          className="mt-3 inline-block text-sm text-accent underline"
+          className="mt-3 inline-flex items-center gap-2 rounded-md border border-neutral-700 px-3 py-1 text-sm hover:bg-neutral-800"
         >
-          View Credential
+          <ExternalLink size={14} />
+          <span>View Credential</span>
         </a>
       )}
     </motion.div>
   );
 }
-
