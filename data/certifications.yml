@@ -19,6 +19,10 @@
        label: "DCF Modeling"
      - href: "/certificates/wsp-m-a-modeling.png"
        label: "M&A Modeling"
+     - href: "/certificates/wsp-intrinsic-valuation.png"
+       label: "Intrinsic Valuation"
+     - href: "/certificates/wsp-relative-valuation.png"
+       label: "Relative Valuation"
 
  - group: Project Finance Modeling
    items:

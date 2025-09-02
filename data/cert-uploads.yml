@@ -1,13 +1,17 @@
-- name: wsp-cpe-cedi-4-fido-stuy-finance.png
-  href: /certificates/wsp-cpe-cedi-4-fido-stuy-finance.png
+- name: wsp-certificate-id-15456064.png
+  href: /certificates/wsp-certificate-id-15456064.png
   type: image
-  sizeKB: 49
-- name: wsp-cpe-credts-1-fido-stuy-finance.png
-  href: /certificates/wsp-cpe-credts-1-fido-stuy-finance.png
+  sizeKB: 46
+- name: wsp-cpe-credits-1-finance.png
+  href: /certificates/wsp-cpe-credits-1-finance.png
   type: image
   sizeKB: 48
-- name: wsp-cpe-cres-5-ied-of-sty-finance.png
-  href: /certificates/wsp-cpe-cres-5-ied-of-sty-finance.png
+- name: wsp-cpe-credits-4-finance.png
+  href: /certificates/wsp-cpe-credits-4-finance.png
+  type: image
+  sizeKB: 49
+- name: wsp-cpe-credits-5-finance.png
+  href: /certificates/wsp-cpe-credits-5-finance.png
   type: image
   sizeKB: 49
 - name: wsp-credential-144030598-2025.pdf
@@ -15,10 +19,6 @@
   type: pdf
   sizeKB: 1300
   pages: 1
-- name: wsp-credential-15456064-avid-ny-13252510.png
-  href: /certificates/wsp-credential-15456064-avid-ny-13252510.png
-  type: image
-  sizeKB: 46
 - name: wsp-dcf-modeling.png
   href: /certificates/wsp-dcf-modeling.png
   type: image
