@@ -8,6 +8,7 @@ interface Writing {
   title: string;
   description: string;
   link: string;
+  excerpt?: string;
 }
 
 export default function WritingPage() {
@@ -25,6 +26,12 @@ export default function WritingPage() {
               </Link>
             </h3>
             <p className="text-neutral-400">{w.description}</p>
+            {w.excerpt && (
+              <details className="mt-2">
+                <summary className="cursor-pointer text-accent">Read excerpt</summary>
+                <p className="mt-2 whitespace-pre-line text-neutral-300">{w.excerpt}</p>
+              </details>
+            )}
           </li>
         ))}
       </ul>

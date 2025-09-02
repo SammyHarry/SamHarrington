@@ -15,9 +15,9 @@
     - code: "Databases"
       name: "Relational Databases"
       skills: "SQL, schema design, normalization"
-    - code: "Data Visualization"
+    - code: "DATA 303"
       name: "Data Visualization"
-      skills: "chart design, storytelling, dashboards"
+      skills: "chart design, storytelling, dashboards, Altair, Tableau"
 - category: "Mathematics"
   courses:
     - code: "MATH 213"

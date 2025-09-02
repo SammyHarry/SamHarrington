@@ -1,0 +1,6 @@
+# Add your AI list items here as a YAML array of objects.
+# Example:
+# - title: "Try RAG with LangChain"
+#   note: "Prototype with a small PDF corpus"
+# - title: "Evaluate OCR models"
+#   note: "Compare PaddleOCR vs. Tesseract on receipts"

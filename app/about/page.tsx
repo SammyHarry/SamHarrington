@@ -62,6 +62,10 @@ export default function AboutPage() {
           ))}
         </ul>
       </div>
+      <div>
+        <SectionHeader eyebrow="AI" title="16 AI Things" blurb="I moved this off the homepage. You can explore the running list here." />
+        <a href="/ai" className="mt-2 inline-block text-accent underline">Open the list</a>
+      </div>
     </div>
   );
 }
