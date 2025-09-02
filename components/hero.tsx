@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin } from 'lucide-react';
 import Link from 'next/link';
+import { withBase } from '@/lib/url';
 
 export default function Hero() {
   return (
@@ -40,7 +41,7 @@ export default function Hero() {
           transition={{ delay: 0.35, duration: 0.5 }}
         >
           <Link
-            href="/sam-harrington-resume.pdf"
+            href={withBase('/sam-harrington-resume.pdf')}
             className="rounded-xl border border-neutral-700 px-4 py-2 hover:bg-neutral-800"
           >
             Download Resume
