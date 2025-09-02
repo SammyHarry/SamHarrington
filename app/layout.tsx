@@ -35,7 +35,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-neutral-900 text-neutral-100">
+      <body className="bg-white text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100">
         <Providers>
           <Background />
           <Nav />
