@@ -57,12 +57,19 @@ export default function AcademicsPage() {
                 {term.gpa && <span className="text-sm text-neutral-400">Term GPA: {term.gpa}</span>}
               </div>
               <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                {term.courses.map((c) => (
-                  <div key={c.code + c.name} className="rounded-xl border border-neutral-700 p-3">
-                    <p className="font-medium">{c.code} — {c.name}</p>
-                    {c.grade && <p className="text-sm text-neutral-400">Grade: {c.grade}</p>}
-                  </div>
-                ))}
+                {term.courses.map((c) => {
+                  const slug = c.code.toLowerCase().replace(/\s+/g, '-');
+                  return (
+                    <a
+                      key={c.code + c.name}
+                      href={`/academics/course/${slug}`}
+                      className="rounded-xl border border-neutral-700 p-3 hover:bg-neutral-800/60"
+                    >
+                      <p className="font-medium">{c.code} — {c.name}</p>
+                      {c.grade && <p className="text-sm text-neutral-400">Grade: {c.grade}</p>}
+                    </a>
+                  );
+                })}
               </div>
             </section>
           ))}
@@ -100,4 +107,3 @@ export default function AcademicsPage() {
     </div>
   );
 }
-
