@@ -5,6 +5,7 @@ import SectionHeader from '@/components/section-header';
 import CertCard, { type Cert } from '@/components/cert-card';
 import Stat from '@/components/stat';
 import { FileText, Image as ImageIcon, ExternalLink, Download } from 'lucide-react';
+import { withBase } from '@/lib/url';
 
 type Upload = { name: string; href: string; type: 'pdf' | 'image'; pages?: number; sizeKB?: number };
 
@@ -52,7 +53,7 @@ export default function CertificationsPage() {
                     {u.type === 'pdf' ? <FileText size={18} /> : <ImageIcon size={18} />}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <a href={u.href} target="_blank" rel="noreferrer" className="block truncate hover:underline">
+                    <a href={withBase(u.href)} target="_blank" rel="noreferrer" className="block truncate hover:underline">
                       {u.name}
                     </a>
                     <div className="text-xs text-neutral-400">
@@ -61,10 +62,10 @@ export default function CertificationsPage() {
                       {typeof u.sizeKB === 'number' ? ` • ${u.sizeKB} KB` : ''}
                     </div>
                   </div>
-                  <a href={u.href} target="_blank" rel="noreferrer" aria-label="Open file" className="ml-2 text-neutral-400 hover:text-accent">
+                  <a href={withBase(u.href)} target="_blank" rel="noreferrer" aria-label="Open file" className="ml-2 text-neutral-400 hover:text-accent">
                     <ExternalLink size={16} />
                   </a>
-                  <a href={u.href} download aria-label="Download file" className="ml-1 text-neutral-400 hover:text-accent">
+                  <a href={withBase(u.href)} download aria-label="Download file" className="ml-1 text-neutral-400 hover:text-accent">
                     <Download size={16} />
                   </a>
                 </li>

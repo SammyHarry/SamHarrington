@@ -45,7 +45,7 @@ export default function ResumePage() {
             </div>
           ))}
           <Link
-            href="/Transcript.pdf"
+            href="/transcript.pdf"
             className="mt-4 inline-block text-accent underline"
             target="_blank"
             rel="noopener noreferrer"

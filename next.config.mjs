@@ -10,6 +10,10 @@ const basePath = isGitHubPages ? (process.env.BASE_PATH || '') : '';
 const nextConfig = {
   // Only enable static export for GitHub Pages builds
   ...(isGitHubPages ? { output: 'export', trailingSlash: true } : {}),
+  // Expose basePath to the client for manual URL building (for <a> tags)
+  env: {
+    ...(isGitHubPages ? { NEXT_PUBLIC_BASE_PATH: basePath || '' } : {}),
+  },
   images: {
     domains: [],
     // Avoid remote loader on static export

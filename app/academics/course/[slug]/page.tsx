@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import yaml from 'yaml';
 import SectionHeader from '@/components/section-header';
+import { withBase } from '@/lib/url';
 
 type Catalog = { courses: { code: string; name: string; description: string }[] };
 type CourseworkGroup = { course: string; items: { title: string; link: string; excerpt?: string; pages?: number; sizeKB?: number }[] };
@@ -52,7 +53,7 @@ export default function CourseDetail({ params }: { params: { slug: string } }) {
           <ul className="mt-2 space-y-3">
             {items.map((it) => (
               <li key={it.link} className="rounded border border-neutral-800 p-3">
-                <a href={it.link} className="font-medium hover:underline" target="_blank" rel="noreferrer">
+                <a href={withBase(it.link)} className="font-medium hover:underline" target="_blank" rel="noreferrer">
                   {it.title}
                 </a>
                 <div className="mt-1 text-xs text-neutral-400">

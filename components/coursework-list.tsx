@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { FileText, ExternalLink, Download } from 'lucide-react';
+import { withBase } from '@/lib/url';
 
 export type CourseworkItem = {
   title: string;
@@ -58,9 +59,9 @@ export default function CourseworkList({ groups }: { groups: CourseworkGroup[] }
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
-                        <a href={it.link} target="_blank" rel="noreferrer" className="font-medium hover:underline">
-                          {it.title}
-                        </a>
+                      <a href={withBase(it.link)} target="_blank" rel="noreferrer" className="font-medium hover:underline">
+                        {it.title}
+                      </a>
                         <span className="rounded-full border border-neutral-700 px-2 py-0.5 text-[10px] uppercase tracking-wide text-neutral-400">
                           {g.course}
                         </span>
@@ -76,10 +77,10 @@ export default function CourseworkList({ groups }: { groups: CourseworkGroup[] }
                         </details>
                       )}
                     </div>
-                    <a href={it.link} target="_blank" rel="noreferrer" aria-label="Open PDF" className="ml-2 text-neutral-400 hover:text-accent">
+                    <a href={withBase(it.link)} target="_blank" rel="noreferrer" aria-label="Open PDF" className="ml-2 text-neutral-400 hover:text-accent">
                       <ExternalLink size={16} />
                     </a>
-                    <a href={it.link} download aria-label="Download PDF" className="ml-1 text-neutral-400 hover:text-accent">
+                    <a href={withBase(it.link)} download aria-label="Download PDF" className="ml-1 text-neutral-400 hover:text-accent">
                       <Download size={16} />
                     </a>
                   </div>
@@ -92,4 +93,3 @@ export default function CourseworkList({ groups }: { groups: CourseworkGroup[] }
     </div>
   );
 }
-

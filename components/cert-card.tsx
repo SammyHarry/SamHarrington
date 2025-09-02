@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Award, ExternalLink, FileText, Image as ImageIcon, Download } from 'lucide-react';
+import { withBase } from '@/lib/url';
 
 export type Cert = {
   group: string;
@@ -59,7 +60,7 @@ export default function CertCard({ cert }: { cert: Cert }) {
             {imgs.length > 0 && (
               <div className="mb-3 grid gap-3 sm:grid-cols-2">
                 {imgs.map((a) => (
-                  <a key={a.href} href={a.href} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-xl border border-neutral-800">
+                  <a key={a.href} href={withBase(a.href)} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-xl border border-neutral-800">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={a.href} alt={a.label || a.href.split('/').pop()} className="aspect-video w-full object-contain bg-neutral-900" />
                   </a>
@@ -74,15 +75,15 @@ export default function CertCard({ cert }: { cert: Cert }) {
                     <li key={a.href} className="flex items-start gap-3 p-3">
                       <span className="mt-0.5 text-neutral-400"><FileText size={18} /></span>
                       <div className="min-w-0 flex-1">
-                        <a href={a.href} target="_blank" rel="noreferrer" className="block truncate hover:underline">
+                      <a href={withBase(a.href)} target="_blank" rel="noreferrer" className="block truncate hover:underline">
                           {name}
                         </a>
                         <div className="text-xs text-neutral-500">PDF</div>
                       </div>
-                      <a href={a.href} target="_blank" rel="noreferrer" aria-label="Open attachment" className="ml-2 text-neutral-400 hover:text-accent">
+                      <a href={withBase(a.href)} target="_blank" rel="noreferrer" aria-label="Open attachment" className="ml-2 text-neutral-400 hover:text-accent">
                         <ExternalLink size={16} />
                       </a>
-                      <a href={a.href} download aria-label="Download attachment" className="ml-1 text-neutral-400 hover:text-accent">
+                      <a href={withBase(a.href)} download aria-label="Download attachment" className="ml-1 text-neutral-400 hover:text-accent">
                         <Download size={16} />
                       </a>
                     </li>
