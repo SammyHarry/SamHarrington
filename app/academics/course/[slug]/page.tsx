@@ -69,3 +69,34 @@ export default function CourseDetail({ params }: { params: { slug: string } }) {
   );
 }
 
+export async function generateStaticParams() {
+  const codes = new Set<string>();
+  try {
+    const acadFile = fs.readFileSync(path.join(process.cwd(), 'data', 'academics.yml'), 'utf8');
+    const acad = yaml.parse(acadFile) as any;
+    for (const term of acad?.terms ?? []) {
+      for (const c of term?.courses ?? []) {
+        if (c?.code) codes.add(String(c.code));
+      }
+    }
+    for (const c of acad?.in_progress?.courses ?? []) {
+      if (c?.code) codes.add(String(c.code));
+    }
+  } catch {}
+  try {
+    const cwFile = fs.readFileSync(path.join(process.cwd(), 'data', 'coursework.yml'), 'utf8');
+    const groups = yaml.parse(cwFile) as any[];
+    for (const g of groups ?? []) {
+      if (g?.course) codes.add(String(g.course));
+    }
+  } catch {}
+  try {
+    const catalogFile = fs.readFileSync(path.join(process.cwd(), 'data', 'course-catalog.yml'), 'utf8');
+    const catalog = yaml.parse(catalogFile) as any;
+    for (const c of catalog?.courses ?? []) {
+      if (c?.code) codes.add(String(c.code));
+    }
+  } catch {}
+  const slugs = Array.from(codes).map((code) => ({ slug: String(code).toLowerCase().replace(/\s+/g, '-') }));
+  return slugs;
+}
