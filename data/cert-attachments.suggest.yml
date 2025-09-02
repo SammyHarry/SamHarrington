@@ -1,0 +1,46 @@
+- group: Wall Street Prep Premium Package
+  suggestions:
+    - href: /certificates/wsp-cpe-cedi-4-fido-stuy-finance.png
+      label: cpe cedi 4 fido stuy finance
+    - href: /certificates/wsp-cpe-credts-1-fido-stuy-finance.png
+      label: cpe credts 1 fido stuy finance
+    - href: /certificates/wsp-cpe-cres-5-ied-of-sty-finance.png
+      label: cpe cres 5 ied of sty finance
+    - href: /certificates/wsp-credential-144030598-2025.pdf
+      label: credential 144030598 2025 (PDF)
+    - href: /certificates/wsp-credential-15456064-avid-ny-13252510.png
+      label: credential 15456064 avid ny 13252510
+    - href: /certificates/wsp-dcf-modeling.png
+      label: dcf modeling
+    - href: /certificates/wsp-equity-research-process.png
+      label: equity research process
+    - href: /certificates/wsp-financial-statement-modeling-2025.pdf
+      label: financial statement modeling 2025 (PDF)
+    - href: /certificates/wsp-financial-valuation-modeling-2025.pdf
+      label: financial valuation modeling 2025 (PDF)
+    - href: /certificates/wsp-intrinsic-valuation.png
+      label: intrinsic valuation
+    - href: /certificates/wsp-m-a-modeling.png
+      label: m a modeling
+    - href: /certificates/wsp-modeling-2.png
+      label: modeling 2
+    - href: /certificates/wsp-modeling-3.png
+      label: modeling 3
+    - href: /certificates/wsp-modeling-4.png
+      label: modeling 4
+    - href: /certificates/wsp-modeling.png
+      label: modeling
+    - href: /certificates/wsp-relative-valuation.png
+      label: relative valuation
+    - href: /certificates/wsp-sell-side-equity-research-certification-erc-2025.pdf
+      label: sell side equity research certification erc 2025 (PDF)
+    - href: /certificates/wsp-writing-research.png
+      label: writing research
+- group: Project Finance Modeling
+  suggestions: []
+- group: Certification in Sell-Side Equity Research (ERC™)
+  suggestions:
+    - href: /certificates/wsp-equity-research-process.png
+      label: equity research process
+    - href: /certificates/wsp-sell-side-equity-research-certification-erc-2025.pdf
+      label: sell side equity research certification erc 2025 (PDF)
