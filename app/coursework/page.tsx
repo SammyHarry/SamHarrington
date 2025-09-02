@@ -2,10 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import yaml from 'yaml';
 import SectionHeader from '@/components/section-header';
+import { FileText, ExternalLink } from 'lucide-react';
 
 type CourseGroup = {
   course: string;
-  items: { title: string; link: string; excerpt?: string }[];
+  items: { title: string; link: string; excerpt?: string; pages?: number; sizeKB?: number }[];
 };
 
 function readCoursework(): CourseGroup[] {
@@ -27,15 +28,27 @@ export default function CourseworkPage() {
             <ul className="space-y-3">
               {g.items.map((it) => (
                 <li key={it.link} className="rounded border border-neutral-800 p-3">
-                  <a href={it.link} target="_blank" rel="noreferrer" className="font-medium hover:underline">
-                    {it.title}
-                  </a>
-                  {it.excerpt && (
-                    <details className="mt-2">
-                      <summary className="cursor-pointer text-accent">Read excerpt</summary>
-                      <p className="mt-2 whitespace-pre-line text-neutral-300">{it.excerpt}</p>
-                    </details>
-                  )}
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5 text-neutral-400"><FileText size={18} /></div>
+                    <div className="min-w-0 flex-1">
+                      <a href={it.link} target="_blank" rel="noreferrer" className="font-medium hover:underline">
+                        {it.title}
+                      </a>
+                      <div className="mt-1 text-xs text-neutral-400">
+                        {it.pages ? `${it.pages} pages` : 'PDF'}
+                        {typeof it.sizeKB === 'number' ? ` • ${it.sizeKB} KB` : ''}
+                      </div>
+                      {it.excerpt && (
+                        <details className="mt-2">
+                          <summary className="cursor-pointer text-accent">Read excerpt</summary>
+                          <p className="mt-2 whitespace-pre-line text-neutral-300">{it.excerpt}</p>
+                        </details>
+                      )}
+                    </div>
+                    <a href={it.link} target="_blank" rel="noreferrer" aria-label="Open PDF" className="ml-2 text-neutral-400 hover:text-accent">
+                      <ExternalLink size={16} />
+                    </a>
+                  </div>
                 </li>
               ))}
             </ul>

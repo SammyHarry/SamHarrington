@@ -41,7 +41,8 @@ async function readPdfInfo(absPath) {
     if (l.length >= 4 && l.length <= 80) { heading = l; break; }
   }
   const excerpt = lines.slice(0, 6).join('\n');
-  return { metaTitle: metaClean, heading, excerpt };
+  const pages = data?.numpages || undefined;
+  return { metaTitle: metaClean, heading, excerpt, pages };
 }
 
 async function main() {
@@ -91,10 +92,18 @@ async function main() {
         d.title = derived;
       }
       d.excerpt = info.excerpt;
+      d.pages = info.pages;
+      const stat = fs.statSync(abs);
+      d.sizeKB = Math.max(1, Math.round(stat.size / 1024));
     } catch (e) {
       const fileBase = path.basename(d.href).replace(/\.pdf$/i, '');
       d.title = toTitleCase(fileBase);
       d.excerpt = '';
+      d.pages = undefined;
+      try {
+        const stat = fs.statSync(abs);
+        d.sizeKB = Math.max(1, Math.round(stat.size / 1024));
+      } catch {}
     }
   }
 
@@ -102,7 +111,7 @@ async function main() {
   const grouped = {};
   for (const d of docs) {
     grouped[d.course] = grouped[d.course] || [];
-    grouped[d.course].push({ title: d.title, link: d.href, excerpt: d.excerpt });
+    grouped[d.course].push({ title: d.title, link: d.href, excerpt: d.excerpt, pages: d.pages, sizeKB: d.sizeKB });
   }
 
   // Sort within groups
