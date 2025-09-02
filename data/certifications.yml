@@ -10,6 +10,15 @@
      - Transaction Comps Modeling
      - Accounting & Financial Statement Analysis
      - Excel Basics (Mac) + Excel Crash Course
+   attachments:
+     - href: "/certificates/wsp-financial-valuation-modeling-2025.pdf"
+       label: "F&V Modeling Certificate (PDF)"
+     - href: "/certificates/wsp-financial-statement-modeling-2025.pdf"
+       label: "Financial Statement Modeling (PDF)"
+     - href: "/certificates/wsp-dcf-modeling.png"
+       label: "DCF Modeling"
+     - href: "/certificates/wsp-m-a-modeling.png"
+       label: "M&A Modeling"
 
  - group: Project Finance Modeling
    items:
@@ -27,3 +36,10 @@
      - "ERC™ 7: Intrinsic Valuation"
      - "ERC™ 8: Professional Soft Skills"
      - "Bonus: Breaking Into Research"
+   attachments:
+     - href: "/certificates/wsp-sell-side-equity-research-certification-erc-2025.pdf"
+       label: "ERC Certificate (PDF)"
+     - href: "/certificates/wsp-equity-research-process.png"
+       label: "Equity Research Process"
+     - href: "/certificates/wsp-writing-research.png"
+       label: "Writing Research"
