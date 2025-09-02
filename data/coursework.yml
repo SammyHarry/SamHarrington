@@ -222,7 +222,7 @@
       sizeKB: 71
 - course: ETHICS 303
   items:
-    - title: May 11
+    - title: A Kantradiction
       link: /coursework/ethics-303/ethics-303-final-paper.pdf
       excerpt: |-
         Sam Harrington
@@ -235,6 +235,17 @@
       sizeKB: 92
 - course: HIST 212
   items:
+    - title: A Book Report on Night
+      link: /coursework/hist-212/hist-212-paper-1.pdf
+      excerpt: |-
+        Sam Harrington
+        Professor Irina Gorbunova-Ford
+        HIST 212
+        March 20
+        th
+        , 2025
+      pages: 4
+      sizeKB: 71
     - title: Holocaust_ResearchPaper
       link: /coursework/hist-212/hist-212-holocaust-research-paper.pdf
       excerpt: |-
@@ -246,17 +257,6 @@
         th
       pages: 6
       sizeKB: 187
-    - title: March 20
-      link: /coursework/hist-212/hist-212-paper-1.pdf
-      excerpt: |-
-        Sam Harrington
-        Professor Irina Gorbunova-Ford
-        HIST 212
-        March 20
-        th
-        , 2025
-      pages: 4
-      sizeKB: 71
 - course: MATH 214
   items:
     - title: HW 09
@@ -432,25 +432,6 @@
       sizeKB: 23
 - course: THEA 200
   items:
-    - title: almost spontaneously where people would gather around the performance.
-      link: /coursework/thea-200/thea-200-project-1.pdf
-      excerpt: >-
-        Sam Harrington
-
-        Space 1: Martha Wren Briggs Amphitheatre
-
-        Space 2: Sunken Garden
-
-        What type of theater architecture is present? The Amphitheater is an
-        open-air arena stage, where
-
-        the audience is close with the actors and open backdrop gives a sense of
-        intimacy. Whereas the
-
-        Sunken Garden would be a more experimental theater as Lauri Wolf would
-        categorize it. When
-      pages: 2
-      sizeKB: 45
     - title: Reflection 1
       link: /coursework/thea-200/thea-200-puppets.pdf
       excerpt: >-
@@ -488,6 +469,26 @@
         Israel-Palestine conflict taught
       pages: 3
       sizeKB: 87
+    - title: What type of theater architecture is present? The Amphitheater is an
+        open-air arena stage, where
+      link: /coursework/thea-200/thea-200-project-1.pdf
+      excerpt: >-
+        Sam Harrington
+
+        Space 1: Martha Wren Briggs Amphitheatre
+
+        Space 2: Sunken Garden
+
+        What type of theater architecture is present? The Amphitheater is an
+        open-air arena stage, where
+
+        the audience is close with the actors and open backdrop gives a sense of
+        intimacy. Whereas the
+
+        Sunken Garden would be a more experimental theater as Lauri Wolf would
+        categorize it. When
+      pages: 2
+      sizeKB: 45
 - course: THEA 201
   items:
     - title: Staging Woyzeck
@@ -509,7 +510,7 @@
       sizeKB: 1138
 - course: Writing
   items:
-    - title: FMST 150 Essay1
+    - title: Harrington 1
       link: /writing/fmst-150-essay-1.pdf
       excerpt: |-
         Harrington 1
@@ -520,7 +521,7 @@
         th
       pages: 6
       sizeKB: 3991
-    - title: FMST_FINAL_Sam_Harrington
+    - title: "M-Auana | Moana Means More: From Hula Auana to Cultural Authenticity"
       link: /writing/fmst-final-essay.pdf
       excerpt: |-
         Sam Harrington

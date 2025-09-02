@@ -34,11 +34,26 @@ async function readPdfInfo(absPath) {
   const badTitles = ['document', 'document7', 'questions', 'reflection_3', 'dancemt'];
   const metaClean = metaTitle && !badTitles.includes(String(metaTitle).toLowerCase()) ? metaTitle : undefined;
   // Heuristic: find a likely heading line after skipping name/course/date lines
-  const skipPatterns = [/^sam harrington/i, /^prof/i, /^(apia|hist|phil|math|thea)\b/i, /william & mary/i, /^\d{4}/, /homework/i, /foundations of mathematics/i, /^space [12]:/i, /^\(?due/i];
+  const month = /(january|february|march|april|may|june|july|august|september|october|november|december)/i;
+  const skipPatterns = [
+    /^sam harrington/i,
+    /^prof/i,
+    /^(apia|hist|phil|math|thea|fmst)\b/i,
+    /william & mary/i,
+    /^\d{4}/,
+    /homework/i,
+    /foundations of mathematics/i,
+    /^space [12]:/i,
+    /^\(?due/i,
+    month,
+  ];
   let heading;
-  for (const l of lines.slice(0, 15)) {
+  for (const l of lines.slice(0, 20)) {
     if (skipPatterns.some((re) => re.test(l))) continue;
-    if (l.length >= 4 && l.length <= 80) { heading = l; break; }
+    if (!/[a-zA-Z]/.test(l)) continue; // must contain letters
+    const trimmed = l.replace(/^[^A-Za-z0-9]+|[^A-Za-z0-9]+$/g, '');
+    if (trimmed.length < 4) continue;
+    if (l.length >= 4 && l.length <= 100) { heading = l; break; }
   }
   const excerpt = lines.slice(0, 6).join('\n');
   const pages = data?.numpages || undefined;
@@ -81,7 +96,7 @@ async function main() {
       ).replace(/\bHw\b/i, 'HW');
       if (!derived || derived.length < 3) derived = toTitleCase(fileBase);
       const meta = info.metaTitle && String(info.metaTitle).trim();
-      const looksGeneric = meta ? /^(APIA|HIST|THEA|ETHICS|Document|Harrington|APIA_\d+)/i.test(meta) : false;
+      const looksGeneric = meta ? /^(APIA|HIST|THEA|ETHICS|FMST|Document|Harrington|APIA_\d+)/i.test(meta) : false;
       if (/^MATH\b/i.test(d.course)) {
         d.title = derived;
       } else if (meta && !looksGeneric) {
