@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import yaml from 'yaml';
 import SectionHeader from '@/components/section-header';
+import CourseworkList, { type CourseworkGroup } from '@/components/coursework-list';
+import { withBase } from '@/lib/url';
 export const metadata = {
   title: 'Academics – Sam Harrington',
   description: 'Academic profile, terms, coursework, and in-progress classes at William & Mary.',
@@ -29,14 +31,15 @@ export default function AcademicsPage() {
   };
 
   const { profile, transfer_ap, terms, in_progress } = data;
-  // Add course highlights and training data for consolidated Academics
+  // Consolidated academic data
   const courseFile = fs.readFileSync(path.join(process.cwd(), 'data', 'courses.yml'), 'utf8');
-  const courses = yaml.parse(courseFile) as {
-    category: string;
-    courses: { code: string; name: string; skills: string }[];
-  }[];
+  const courses = yaml.parse(courseFile) as { category: string; courses: { code: string; name: string; skills: string }[] }[];
   const resumeFile = fs.readFileSync(path.join(process.cwd(), 'data', 'resume.yml'), 'utf8');
   const resume = yaml.parse(resumeFile) as any;
+  const cwFile = fs.readFileSync(path.join(process.cwd(), 'data', 'coursework.yml'), 'utf8');
+  const courseworkGroups = yaml.parse(cwFile) as CourseworkGroup[];
+  const writingFile = fs.readFileSync(path.join(process.cwd(), 'data', 'writing.yml'), 'utf8');
+  const writing = yaml.parse(writingFile) as { title: string; description: string; link: string }[];
 
   return (
     <div className="py-16">
@@ -115,6 +118,62 @@ export default function AcademicsPage() {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="mt-12">
+        <SectionHeader eyebrow="Course Highlights" title="Key Courses" />
+        {courses.map((cat) => (
+          <div key={cat.category} className="mt-4">
+            <h4 className="text-neutral-300">{cat.category}</h4>
+            <div className="mt-2 grid gap-2 md:grid-cols-2">
+              {cat.courses.map((c) => (
+                <div key={c.code} className="rounded border border-neutral-700 p-3">
+                  <p className="font-medium">{c.code}: {c.name}</p>
+                  <p className="text-sm text-neutral-400">{c.skills}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-12">
+        <SectionHeader eyebrow="Certifications" title="Training & Credentials" />
+        <div className="grid gap-4 md:grid-cols-2">
+          {resume.training?.map((t: any) => (
+            <div key={t.title} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4">
+              <h5 className="font-semibold">{t.title}</h5>
+              <ul className="mt-2 list-disc pl-5 text-sm text-neutral-300">
+                {t.items.map((i: string) => (<li key={i}>{i}</li>))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-12">
+        <SectionHeader eyebrow="Coursework" title="Coursework Explorer" blurb="Browse essays, assignments, and deliverables organized by course." />
+        <CourseworkList groups={courseworkGroups} />
+        <p className="mt-4 text-center text-sm text-neutral-400">
+          Prefer a full page? <a className="underline hover:text-accent" href={withBase('/coursework')}>Open Coursework →</a>
+        </p>
+      </div>
+
+      <div className="mt-12">
+        <SectionHeader eyebrow="Writing" title="Writing Highlights" blurb="Selected essays and research pieces from coursework." />
+        <ul className="mx-auto grid max-w-3xl gap-4">
+          {writing.slice(0, 4).map((w) => (
+            <li key={w.title} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4">
+              <a href={withBase(w.link)} className="font-semibold hover:underline" target="_blank" rel="noreferrer">
+                {w.title}
+              </a>
+              <p className="text-sm text-neutral-400">{w.description}</p>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-4 text-center text-sm text-neutral-400">
+          See more in <a className="underline hover:text-accent" href={withBase('/writing')}>Writing →</a>
+        </p>
       </div>
 
       <div className="mt-12">
