@@ -6,6 +6,7 @@ import { withBase } from '@/lib/url';
 
 type Catalog = { courses: { code: string; name: string; description: string }[] };
 type CourseworkGroup = { course: string; items: { title: string; link: string; excerpt?: string; pages?: number; sizeKB?: number }[] };
+type Highlights = { category: string; courses: { code: string; name: string; skills: string }[] }[];
 
 function slugToCode(slug: string) {
   // e.g., 'math-214' -> 'MATH 214'; 'math-311h' -> 'MATH 311H'
@@ -33,18 +34,55 @@ function loadCoursework(): CourseworkGroup[] {
   return yaml.parse(f) as CourseworkGroup[];
 }
 
+function loadHighlights(): Highlights {
+  try {
+    const f = fs.readFileSync(path.join(process.cwd(), 'data', 'courses.yml'), 'utf8');
+    return yaml.parse(f) as Highlights;
+  } catch {
+    return [];
+  }
+}
+
+function findSkillsForCode(highlights: Highlights, code: string) {
+  const norm = (s: string) => s.replace(/\s+/g, '').toUpperCase();
+  const codeNorm = norm(code);
+  for (const cat of highlights) {
+    for (const c of cat.courses) {
+      const cNorm = norm(c.code);
+      if (cNorm === codeNorm || cNorm.includes(codeNorm) || codeNorm.includes(cNorm)) {
+        return c.skills;
+      }
+    }
+  }
+  return undefined;
+}
+
 export default function CourseDetail({ params }: { params: { slug: string } }) {
   const code = slugToCode(params.slug);
   const catalog = loadCatalog();
   const course = findCourse(catalog, code);
   const coursework = loadCoursework();
+  const highlights = loadHighlights();
   // find matching items by exact course code; otherwise also show any ambiguous under Other
   const group = coursework.find((g) => g.course.toUpperCase() === code.toUpperCase());
   const items = group?.items ?? [];
+  const skills = findSkillsForCode(highlights, code);
 
   return (
     <div className="py-16">
       <SectionHeader eyebrow="Course" title={`${course.code}: ${course.name}`} blurb={course.description} />
+      {skills && (
+        <div className="mb-6 rounded-2xl border border-white/5 bg-neutral-800/70 p-4">
+          <h3 className="font-semibold">Skills &amp; Tools</h3>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {skills.split(',').map((s) => (
+              <span key={s.trim()} className="rounded-2xl bg-neutral-800 px-3 py-1 text-sm">
+                {s.trim()}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
       <div className="mt-6 rounded-2xl border border-neutral-800 p-4">
         <h3 className="font-semibold">Coursework</h3>
         {items.length === 0 ? (
