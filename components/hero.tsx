@@ -40,27 +40,24 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.35, duration: 0.5 }}
         >
-          <Link
-            href={withBase('/sam-harrington-resume.pdf')}
-            className="rounded-xl border border-neutral-700 px-4 py-2 hover:bg-neutral-800"
-          >
+          <Link href={withBase('/sam-harrington-resume.pdf')} className="btn">
             Download Resume
           </Link>
           <a
             href="mailto:sharrington329@gmail.com"
-            className="rounded-xl bg-white/10 px-4 py-2 hover:bg-white/20"
+            className="btn-primary"
           >
             Email Me
           </a>
           <a
             href="https://github.com/SammyHarry" aria-label="GitHub"
-            className="rounded-xl border border-neutral-700/60 p-2 hover:bg-neutral-800/60"
+            className="btn px-2"
           >
             <Github size={18} />
           </a>
           <a
             href="https://www.linkedin.com/in/s-harrington011" aria-label="LinkedIn"
-            className="rounded-xl border border-neutral-700/60 p-2 hover:bg-neutral-800/60"
+            className="btn px-2"
           >
             <Linkedin size={18} />
           </a>

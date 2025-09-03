@@ -21,6 +21,20 @@ html,body {
   to { background-position: 200% 0, 0 200%; }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .grid-bg { animation: none; }
+}
+
+/* Buttons and focus styles */
+@layer components {
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-xl border border-neutral-700 px-4 py-2 transition-transform duration-150 ease-out hover:bg-neutral-800 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-xl bg-accent px-4 py-2 text-neutral-900 transition-transform duration-150 ease-out hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900;
+  }
+}
+
 /* Fancy gradient text utility */
 .gradient-text {
   @apply bg-clip-text text-transparent;

@@ -4,6 +4,7 @@ import { Metadata, Viewport } from 'next';
 import Nav from '@/components/nav';
 import Footer from '@/components/footer';
 import Background from '@/components/background';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Sam Harrington',
@@ -35,6 +36,21 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="bg-neutral-900 text-neutral-100">
+        <Script id="ld-person" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Sam Harrington',
+            url: 'https://sammyharry.github.io/SamHarrington/',
+            sameAs: [
+              'https://www.linkedin.com/in/s-harrington011',
+              'https://github.com/SammyHarry'
+            ],
+            alumniOf: 'College of William & Mary',
+            jobTitle: 'Student',
+            description: 'Data Science • Applied Math • Finance + AI'
+          })}
+        </Script>
         <Background />
         <Nav />
         <main className="container mx-auto px-4">{children}</main>
