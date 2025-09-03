@@ -29,6 +29,14 @@ export default function AcademicsPage() {
   };
 
   const { profile, transfer_ap, terms, in_progress } = data;
+  // Add course highlights and training data for consolidated Academics
+  const courseFile = fs.readFileSync(path.join(process.cwd(), 'data', 'courses.yml'), 'utf8');
+  const courses = yaml.parse(courseFile) as {
+    category: string;
+    courses: { code: string; name: string; skills: string }[];
+  }[];
+  const resumeFile = fs.readFileSync(path.join(process.cwd(), 'data', 'resume.yml'), 'utf8');
+  const resume = yaml.parse(resumeFile) as any;
 
   return (
     <div className="py-16">
@@ -103,6 +111,37 @@ export default function AcademicsPage() {
                 {cat.items.map((i) => (
                   <li key={i}>{i}</li>
                 ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-12">
+        <SectionHeader eyebrow="Course Highlights" title="Key Courses" />
+        {courses.map((cat) => (
+          <div key={cat.category} className="mt-4">
+            <h4 className="text-neutral-300">{cat.category}</h4>
+            <div className="mt-2 grid gap-2 md:grid-cols-2">
+              {cat.courses.map((c) => (
+                <div key={c.code} className="rounded border border-neutral-700 p-3">
+                  <p className="font-medium">{c.code}: {c.name}</p>
+                  <p className="text-sm text-neutral-400">{c.skills}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-12">
+        <SectionHeader eyebrow="Certifications" title="Training & Credentials" />
+        <div className="grid gap-4 md:grid-cols-2">
+          {resume.training?.map((t: any) => (
+            <div key={t.title} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4">
+              <h5 className="font-semibold">{t.title}</h5>
+              <ul className="mt-2 list-disc pl-5 text-sm text-neutral-300">
+                {t.items.map((i: string) => (<li key={i}>{i}</li>))}
               </ul>
             </div>
           ))}

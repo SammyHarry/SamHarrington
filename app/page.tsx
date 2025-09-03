@@ -1,5 +1,6 @@
 import Hero from '@/components/hero';
 import SectionHeader from '@/components/section-header';
+import Link from 'next/link';
 import ProjectCard from '@/components/project-card';
 import Stat from '@/components/stat';
 import { getProjects } from '@/lib/projects';
@@ -20,6 +21,9 @@ export default function HomePage() {
         {projects.map((p) => (
           <ProjectCard key={p.title} project={p} />
         ))}
+      </div>
+      <div className="mt-6 text-center">
+        <Link href="/projects" className="underline text-accent">View all projects →</Link>
       </div>
     </div>
   );
