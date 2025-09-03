@@ -3,6 +3,11 @@ import path from 'path';
 import yaml from 'yaml';
 import Link from 'next/link';
 import SectionHeader from '@/components/section-header';
+export const metadata = {
+  title: '16 AI Things (Generative AI) – Sam Harrington',
+  description:
+    'William & Mary’s “16 Things in 93 Days” Generative AI program — reflections, tools, and what I learned across text, images, ethics, and productivity.'
+};
 
 type Item = { title: string; status: 'completed' | 'in_progress' | 'pending'; link?: string };
 
@@ -12,13 +17,17 @@ export default function GenAIPage() {
   return (
     <div className="py-16">
       <SectionHeader
-        eyebrow="16 Things in 93 Days"
+        eyebrow="Generative AI — 16 Things in 93 Days"
         title={`✅ ${data.completion}/${data.total} Completed`}
         blurb={
           data.description ||
-          'Accelerated program applying Generative AI across communication, coding, data, creativity, productivity, and more.'
+          'W&M self‑paced program exploring AI across text, images, ethics, creativity, productivity, and more — with takeaways that feed into my projects and coursework.'
         }
       />
+      <p className="mb-6 text-sm text-neutral-400">
+        See how this learning translates to my <a className="underline hover:text-accent" href="/projects">projects</a>
+        {' '}and <a className="underline hover:text-accent" href="/academics">academics</a>.
+      </p>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {data.items.map((it, idx) => {
           const label = `Thing ${idx + 1}`;

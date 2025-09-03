@@ -20,7 +20,7 @@ const moreLinks = [
   { href: '/writing', label: 'Writing' },
   { href: '/certifications', label: 'Certifications' },
   { href: '/awards', label: 'Awards' },
-  { href: '/genai', label: 'GenAI' },
+  { href: '/genai', label: '16 AI Things' },
 ];
 
 export default function Nav() {
