@@ -2,6 +2,11 @@ import SectionHeader from '@/components/section-header';
 import { withBase } from '@/lib/url';
 import SkillPills from '@/components/skill-pills';
 
+export const metadata = {
+  title: 'About – Sam Harrington',
+  description: 'About Sam Harrington — Data Science & Applied Math student at William & Mary. Interests, values, and skills.',
+};
+
 export default function AboutPage() {
   const technicalSkills = [
     { name: 'Python', from: 'CSCI 243, DATA 201, independent projects' },

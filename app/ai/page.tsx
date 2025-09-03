@@ -2,6 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import yaml from 'yaml';
 import SectionHeader from '@/components/section-header';
+export const metadata = {
+  title: 'AI Notes – Sam Harrington',
+  description: 'A growing list of AI tools, ideas, and experiments.',
+};
 
 type Item = { title: string; note?: string };
 
@@ -18,7 +22,7 @@ export default function AIPage() {
 
   return (
     <div className="py-16">
-      <SectionHeader eyebrow="AI" title="16 AI Things" blurb="A running list of AI ideas, tools, and notes I'm tracking." />
+      <SectionHeader eyebrow="AI" title="16 AI Things" blurb={items.length ? undefined : 'Coming soon — I\'m collecting notes and links here.'} />
       {items.length > 0 ? (
         <ol className="list-decimal pl-6 space-y-2 text-neutral-300">
           {items.map((it, idx) => (
@@ -29,7 +33,7 @@ export default function AIPage() {
           ))}
         </ol>
       ) : (
-        <p className="text-neutral-400">No items yet. Add entries to <code>data/ai.yml</code> as a list of objects with <code>title</code> and optional <code>note</code>.</p>
+        <p className="text-neutral-400">Check back soon — this section will feature AI experiments, tools, and write‑ups.</p>
       )}
     </div>
   );

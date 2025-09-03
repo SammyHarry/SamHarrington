@@ -36,6 +36,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="bg-neutral-900 text-neutral-100">
+        <a
+          href="#content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 rounded bg-accent px-3 py-2 text-neutral-900"
+        >
+          Skip to content
+        </a>
         <Script id="ld-person" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
             '@context': 'https://schema.org',
@@ -53,7 +59,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </Script>
         <Background />
         <Nav />
-        <main className="container mx-auto px-4">{children}</main>
+        <main id="content" className="container mx-auto px-4">{children}</main>
         <Footer />
       </body>
     </html>

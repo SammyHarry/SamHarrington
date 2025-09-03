@@ -9,7 +9,7 @@ export default function SectionHeader({ eyebrow, title, blurb }: SectionHeaderPr
     <div className="mb-10 lg:mb-14 text-center">
       <p className="text-sm uppercase tracking-widest text-accent">{eyebrow}</p>
       <h2 className="mt-2 mb-4 text-3xl lg:text-4xl font-bold gradient-text">{title}</h2>
-      {blurb && <p className="text-neutral-400 max-w-2xl mx-auto leading-relaxed">{blurb}</p>}
+      {blurb && <p className="text-neutral-300 max-w-2xl mx-auto leading-relaxed">{blurb}</p>}
     </div>
   );
 }

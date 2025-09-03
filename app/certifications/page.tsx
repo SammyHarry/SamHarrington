@@ -2,6 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import yaml from 'yaml';
 import SectionHeader from '@/components/section-header';
+export const metadata = {
+  title: 'Certifications – Sam Harrington',
+  description: 'Finance training, certifications, and proof of completion with attachments.',
+};
 import CertCard, { type Cert } from '@/components/cert-card';
 import Stat from '@/components/stat';
 

@@ -2,6 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import yaml from 'yaml';
 import SectionHeader from '@/components/section-header';
+export const metadata = {
+  title: 'Academics – Sam Harrington',
+  description: 'Academic profile, terms, coursework, and in-progress classes at William & Mary.',
+};
 
 type Profile = {
   school: string;

@@ -19,9 +19,13 @@ export default function ContactForm({ action }: Props) {
   if (action) {
     return (
       <form action={formAction} onSubmit={() => setLoading(true)} className="space-y-4">
-        <input type="text" name="name" placeholder="Name" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" />
-        <input type="email" name="email" placeholder="Email" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" />
-        <textarea name="message" placeholder="Message" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" />
+        <label htmlFor="name" className="block text-sm text-neutral-300">Name</label>
+        <input id="name" type="text" name="name" placeholder="Your name" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" />
+        <label htmlFor="email" className="block text-sm text-neutral-300">Email</label>
+        <input id="email" type="email" name="email" placeholder="you@example.com" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" />
+        <label htmlFor="message" className="block text-sm text-neutral-300">Message</label>
+        <textarea id="message" name="message" placeholder="How can I help?" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" aria-describedby="contact-hint" />
+        <p id="contact-hint" className="text-xs text-neutral-400">I usually respond within 24–48 hours.</p>
         <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
         <button type="submit" disabled={loading} className="rounded-md bg-accent px-4 py-2 text-neutral-900">
           {loading ? 'Sending...' : 'Send'}
@@ -48,9 +52,13 @@ export default function ContactForm({ action }: Props) {
       }}
       className="space-y-4"
     >
-      <input type="text" name="name" placeholder="Name" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" />
-      <input type="email" name="email" placeholder="Email" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" />
-      <textarea name="message" placeholder="Message" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" />
+      <label htmlFor="name2" className="block text-sm text-neutral-300">Name</label>
+      <input id="name2" type="text" name="name" placeholder="Your name" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" />
+      <label htmlFor="email2" className="block text-sm text-neutral-300">Email</label>
+      <input id="email2" type="email" name="email" placeholder="you@example.com" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" />
+      <label htmlFor="message2" className="block text-sm text-neutral-300">Message</label>
+      <textarea id="message2" name="message" placeholder="How can I help?" required className="w-full rounded-md border border-neutral-700 bg-neutral-800 p-2" aria-describedby="contact-hint2" />
+      <p id="contact-hint2" className="text-xs text-neutral-400">I usually respond within 24–48 hours.</p>
       <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
       <button type="submit" className="rounded-md bg-accent px-4 py-2 text-neutral-900">Email Me</button>
     </form>

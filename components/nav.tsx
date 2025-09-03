@@ -27,6 +27,13 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const path = usePathname();
+  function onMoreKeyDown(e: React.KeyboardEvent<HTMLButtonElement | HTMLDivElement>) {
+    if (e.key === 'Escape') setMoreOpen(false);
+    if ((e.currentTarget as HTMLElement).tagName === 'BUTTON' && (e.key === ' ' || e.key === 'Enter')) {
+      e.preventDefault();
+      setMoreOpen((v) => !v);
+    }
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-neutral-900/80 backdrop-blur supports-[backdrop-filter]:bg-neutral-900/60">
@@ -48,9 +55,10 @@ export default function Nav() {
               </Link>
             </li>
           ))}
-          <li className="relative"
-              onMouseEnter={() => setMoreOpen(true)}
-              onMouseLeave={() => setMoreOpen(false)}
+          <li
+            className="relative"
+            onMouseEnter={() => setMoreOpen(true)}
+            onMouseLeave={() => setMoreOpen(false)}
           >
             <button
               className={`flex items-center gap-1 rounded-md px-2 py-1 transition-colors ${
@@ -59,18 +67,27 @@ export default function Nav() {
               aria-haspopup="true"
               aria-expanded={moreOpen}
               onClick={() => setMoreOpen((v) => !v)}
+              onKeyDown={onMoreKeyDown}
             >
               More <ChevronDown size={16} />
             </button>
             {moreOpen && (
-              <div className="absolute right-0 mt-2 w-44 rounded-xl border border-neutral-800 bg-neutral-900/95 p-2 shadow-xl">
+              <div
+                role="menu"
+                aria-label="More pages"
+                tabIndex={-1}
+                onKeyDown={onMoreKeyDown}
+                className="absolute right-0 mt-2 w-44 rounded-xl border border-neutral-800 bg-neutral-900/95 p-2 shadow-xl"
+              >
                 {moreLinks.map((l) => (
                   <Link
                     key={l.href}
                     href={l.href}
+                    role="menuitem"
                     className={`block rounded-md px-3 py-2 text-sm transition-colors ${
                       path === l.href ? 'bg-neutral-800 text-accent' : 'hover:bg-neutral-800'
                     }`}
+                    onClick={() => setMoreOpen(false)}
                   >
                     {l.label}
                   </Link>
