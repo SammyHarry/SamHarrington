@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import yaml from 'yaml';
-import Link from 'next/link';
 import SectionHeader from '@/components/section-header';
+import { withBase } from '@/lib/url';
 export const metadata = {
   title: '16 AI Things (Generative AI) – Sam Harrington',
   description:
@@ -25,25 +25,30 @@ export default function GenAIPage() {
         }
       />
       <p className="mb-6 text-sm text-neutral-400">
-        See how this learning translates to my <a className="underline hover:text-accent" href="/projects">projects</a>
-        {' '}and <a className="underline hover:text-accent" href="/academics">academics</a>.
+        See how this learning translates to my <a className="underline hover:text-accent" href={withBase('/projects')}>projects</a>
+        {' '}and <a className="underline hover:text-accent" href={withBase('/academics')}>academics</a>.
       </p>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {data.items.map((it, idx) => {
           const label = `Thing ${idx + 1}`;
-          return (
-            <Link
-              key={it.title + idx}
-              href={it.link || '#'}
-              className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4 transition hover:bg-neutral-800/90 hover:ring-1 hover:ring-accent"
-            >
+          const content = (
+            <>
               <div className="flex items-center justify-between">
                 <span className="text-xs rounded-md bg-neutral-700/70 px-2 py-1">{label}</span>
                 <span className="text-xs text-accent">{it.status === 'completed' ? 'Completed' : it.status}</span>
               </div>
               <h3 className="mt-2 font-semibold">{it.title}</h3>
-              <p className="mt-1 text-xs text-neutral-400">Click to open reflections</p>
-            </Link>
+              <p className="mt-1 text-xs text-neutral-400">{it.link ? 'Click to open reflections' : 'Reflection coming soon'}</p>
+            </>
+          );
+          return it.link ? (
+            <a key={it.title + idx} href={it.link} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4 transition hover:bg-neutral-800/90 hover:ring-1 hover:ring-accent" target="_blank" rel="noreferrer">
+              {content}
+            </a>
+          ) : (
+            <div key={it.title + idx} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4 opacity-90">
+              {content}
+            </div>
           );
         })}
       </div>
