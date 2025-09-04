@@ -1,7 +1,14 @@
 import createMDX from "@next/mdx";
 
-// Enable MDX support
-const withMDX = createMDX();
+// Enable MDX support with a lightweight provider shim to avoid
+// importing @mdx-js/react during static export (GH Pages build).
+const withMDX = createMDX({
+  options: {
+    // Point provider import to a local shim that simply passes through components
+    // to prevent bundling issues with createContext during build.
+    providerImportSource: "@/mdx-components",
+  },
+});
 
 const isGitHubPages = process.env.GITHUB_PAGES === 'true';
 const basePath = isGitHubPages ? (process.env.BASE_PATH || '') : '';
