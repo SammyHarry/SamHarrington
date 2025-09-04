@@ -146,13 +146,7 @@ export default function AcademicsPage() {
 
       
 
-      <div className="mt-12">
-        <SectionHeader eyebrow="Coursework" title="Coursework Explorer" blurb="Browse essays, assignments, and deliverables organized by course." />
-        <CourseworkList groups={courseworkGroups} />
-        <p className="mt-4 text-center text-sm text-neutral-400">
-          Prefer a full page? <a className="underline hover:text-accent" href={withBase('/coursework')}>Open Coursework →</a>
-        </p>
-      </div>
+      {/* Removed Coursework Explorer section to reduce redundancy. Coursework is accessible via course detail pages. */}
 
       <div className="mt-12">
         <SectionHeader eyebrow="Writing" title="Writing Highlights" blurb="Selected essays and research pieces from coursework." />
