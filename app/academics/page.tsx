@@ -71,20 +71,32 @@ export default function AcademicsPage() {
                 <h4 className="text-lg font-semibold">{term.title}</h4>
                 {term.gpa && <span className="text-sm text-neutral-400">Term GPA: {term.gpa}</span>}
               </div>
-              <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                {term.courses.map((c) => {
-                  const slug = c.code.toLowerCase().replace(/\s+/g, '-');
-                  return (
-                    <a
-                      key={c.code + c.name}
-                      href={`/academics/course/${slug}`}
-                      className="rounded-xl border border-neutral-700 p-3 hover:bg-neutral-800/60"
-                    >
-                      <p className="font-medium">{c.code} — {c.name}</p>
-                      {c.grade && <p className="text-sm text-neutral-400">Grade: {c.grade}</p>}
-                    </a>
-                  );
-                })}
+              <div className="mt-3 overflow-x-auto">
+                <table className="w-full text-left text-sm">
+                  <thead className="text-neutral-400">
+                    <tr>
+                      <th className="px-2 py-1">Code</th>
+                      <th className="px-2 py-1">Course</th>
+                      <th className="px-2 py-1">Grade</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {term.courses.map((c) => {
+                      const slug = c.code.toLowerCase().replace(/\s+/g, '-');
+                      return (
+                        <tr key={c.code + c.name} className="border-t border-neutral-800">
+                          <td className="px-2 py-2 align-top">
+                            <a href={withBase(`/academics/course/${slug}`)} className="hover:underline">{c.code}</a>
+                          </td>
+                          <td className="px-2 py-2 align-top">
+                            <a href={withBase(`/academics/course/${slug}`)} className="hover:underline">{c.name}</a>
+                          </td>
+                          <td className="px-2 py-2 align-top">{c.grade ?? '—'}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
               </div>
             </section>
           ))}
@@ -120,36 +132,7 @@ export default function AcademicsPage() {
         </div>
       </div>
 
-      <div className="mt-12">
-        <SectionHeader eyebrow="Course Highlights" title="Key Courses" />
-        {courses.map((cat) => (
-          <div key={cat.category} className="mt-4">
-            <h4 className="text-neutral-300">{cat.category}</h4>
-            <div className="mt-2 grid gap-2 md:grid-cols-2">
-              {cat.courses.map((c) => (
-                <div key={c.code} className="rounded border border-neutral-700 p-3">
-                  <p className="font-medium">{c.code}: {c.name}</p>
-                  <p className="text-sm text-neutral-400">{c.skills}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-12">
-        <SectionHeader eyebrow="Certifications" title="Training & Credentials" />
-        <div className="grid gap-4 md:grid-cols-2">
-          {resume.training?.map((t: any) => (
-            <div key={t.title} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4">
-              <h5 className="font-semibold">{t.title}</h5>
-              <ul className="mt-2 list-disc pl-5 text-sm text-neutral-300">
-                {t.items.map((i: string) => (<li key={i}>{i}</li>))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
+      
 
       <div className="mt-12">
         <SectionHeader eyebrow="Coursework" title="Coursework Explorer" blurb="Browse essays, assignments, and deliverables organized by course." />

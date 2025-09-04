@@ -9,6 +9,7 @@ export interface Project {
   features: string[];
   link?: string;
   github?: string;
+  caseStudyPath?: string;
 }
 
 export function getProjects(): Project[] {

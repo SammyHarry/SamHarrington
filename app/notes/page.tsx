@@ -3,7 +3,7 @@ import path from 'path';
 import Link from 'next/link';
 import SectionHeader from '@/components/section-header';
 
-type Note = { slug: string; title: string };
+type Note = { slug: string; title: string; summary?: string };
 
 export default async function NotesIndex() {
   const dir = path.join(process.cwd(), 'app', 'notes');
@@ -16,7 +16,8 @@ export default async function NotesIndex() {
         // Import the MDX module to read its exported metadata
         const mod = await import(`./${slug}.mdx`);
         const title = (mod as any).metadata?.title || slug;
-        return { slug, title };
+        const summary = (mod as any).metadata?.summary || undefined;
+        return { slug, title, summary };
       } catch {
         return { slug, title: slug };
       }
@@ -27,7 +28,7 @@ export default async function NotesIndex() {
     <div className="py-16">
       <SectionHeader eyebrow="Notes" title="Blog Posts" />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {notes.map(({ slug, title }) => (
+        {notes.map(({ slug, title, summary }) => (
           <Link
             key={slug}
             href={`/notes/${slug}`}
@@ -35,6 +36,7 @@ export default async function NotesIndex() {
           >
             <h3 className="font-semibold gradient-text">{title}</h3>
             <p className="text-xs text-neutral-400 mt-1">/notes/{slug}</p>
+            {summary && <p className="mt-2 text-sm text-neutral-300">{summary}</p>}
           </Link>
         ))}
       </div>

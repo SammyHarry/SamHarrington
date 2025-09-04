@@ -11,8 +11,8 @@ const links = [
   { href: '/experience', label: 'Experience' },
   { href: '/projects', label: 'Projects' },
   { href: '/academics', label: 'Academics' },
-  { href: '/genai', label: 'AI Learning' },
-  { href: '/resume', label: 'Resume' },
+  { href: '/notes', label: 'Blog' },
+  { href: '/resume', label: 'Résumé' },
   { href: '/contact', label: 'Contact' },
 ];
 

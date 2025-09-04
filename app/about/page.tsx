@@ -42,12 +42,20 @@ export default function AboutPage() {
   return (
     <div className="space-y-12 py-16">
       <SectionHeader eyebrow="About" title="Who I Am" />
-      <p className="text-neutral-300">
-        I grew up in Gloucester Point, Virginia, and I’m passionate about mathematics, technology, and finance. At William & Mary I’m pursuing Applied Mathematics and Data Science (AI Track). I’ve completed Wall Street Prep’s Financial Modeling & Valuation training. My studies and training combine statistical modeling, machine learning, and finance—giving me a strong foundation in both the theoretical and practical sides of data science. I plan to graduate in May 2027 on an accelerated three‑year schedule.
-      </p>
-      <div className="grid gap-8 md:grid-cols-2">
-        <SkillPills title="Technical Skills" skills={technicalSkills} />
-        <SkillPills title="Soft Skills" skills={softSkills} />
+      <div className="space-y-4 text-neutral-300">
+        <p>
+          I’m an Applied Mathematics and Data Science (AI Track) student at William & Mary, graduating May 2027 on an accelerated three‑year plan. I enjoy building data‑driven products, analyzing complex systems, and working on teams where shipping useful things matters.
+        </p>
+        <p>
+          My recent focus blends quantitative methods, machine learning, and finance. I’ve completed Wall Street Prep’s Financial & Valuation Modeling training and I’m actively applying those skills across projects and coursework.
+        </p>
+      </div>
+      <div>
+        <SectionHeader eyebrow="Skills" title="What I Work With" />
+        <div className="grid gap-8 md:grid-cols-2">
+          <SkillPills title="Technical" skills={technicalSkills} />
+          <SkillPills title="Soft" skills={softSkills} />
+        </div>
       </div>
       <div>
         <SectionHeader eyebrow="Interests & Values" title="Outside of Work" />
@@ -57,7 +65,7 @@ export default function AboutPage() {
       </div>
       <div>
         <SectionHeader eyebrow="AI" title="16 AI Things" blurb="Reflections from W&M’s self‑paced Generative AI program." />
-        <a href={withBase('/genai')} className="mt-2 inline-block text-accent underline">Open the program</a>
+        <a href={withBase('/genai')} className="mt-2 inline-block text-accent underline">Read my Generative AI reflections →</a>
       </div>
     </div>
   );

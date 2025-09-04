@@ -6,6 +6,12 @@ html,body {
   scroll-behavior: smooth;
 }
 
+@layer base {
+  p { @apply leading-relaxed; }
+  li { @apply leading-relaxed; }
+  a { @apply underline-offset-2; }
+}
+
 /* Animated grid background */
 .grid-bg {
   --grid-color: theme(colors.neutral.700);

@@ -22,7 +22,7 @@ export default function Timeline() {
           <h3 className="text-xl font-semibold">{exp.role}</h3>
           <span className="text-sm text-neutral-400">{exp.company} • {exp.dates}</span>
           <ul className="mt-2 list-disc pl-4 text-neutral-300">
-            {exp.bullets.map((b) => (
+            {(exp.bullets || []).slice(0, 3).map((b) => (
               <li key={b}>{b}</li>
             ))}
           </ul>

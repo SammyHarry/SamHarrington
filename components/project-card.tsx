@@ -1,7 +1,8 @@
 "use client";
 import { motion } from 'framer-motion';
 import type { Project } from '@/lib/projects';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, FileText } from 'lucide-react';
+import { withBase } from '@/lib/url';
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
@@ -29,7 +30,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           <li key={f}>{f}</li>
         ))}
       </ul>
-      {(project.github || project.link) && (
+      {(project.github || project.link || project.caseStudyPath) && (
         <div className="mt-4 flex gap-3">
           {project.link && (
             <a
@@ -49,6 +50,14 @@ export default function ProjectCard({ project }: { project: Project }) {
               className="inline-flex items-center gap-1 rounded-md border border-neutral-700 px-2 py-1 text-sm hover:bg-neutral-800"
             >
               <Github size={14} /> GitHub
+            </a>
+          )}
+          {project.caseStudyPath && (
+            <a
+              href={withBase(project.caseStudyPath)}
+              className="inline-flex items-center gap-1 rounded-md border border-neutral-700 px-2 py-1 text-sm hover:bg-neutral-800"
+            >
+              <FileText size={14} /> Case Study
             </a>
           )}
         </div>

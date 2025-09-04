@@ -15,6 +15,7 @@
     - Recognizes handwritten scorecards via OCR (PaddleOCR)
     - Parses race results and exports structured outputs
     - Containerized with Docker for reproducible deployment
+  caseStudyPath: /projects/case-study/act-ai-ocr-pipeline
 
 - title: Crawler App
   summary: React Native social platform for sharing nightlife routes
