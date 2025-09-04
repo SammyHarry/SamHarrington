@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import yaml from 'yaml';
 import SectionHeader from '@/components/section-header';
+import QuickLinks from '@/components/quick-links';
 import CourseworkList, { type CourseworkGroup } from '@/components/coursework-list';
 import { withBase } from '@/lib/url';
 export const metadata = {
@@ -62,24 +63,15 @@ export default function AcademicsPage() {
         </div>
       </div>
 
-      {/* Quick links to detailed pages */}
-      <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <a href={withBase('/transcript.pdf')} target="_blank" rel="noreferrer" className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4 transition hover:bg-neutral-800/90 hover:ring-1 hover:ring-accent">
-          <p className="text-sm uppercase tracking-wider text-neutral-400">Transcript</p>
-          <p className="mt-1 font-semibold">View Official Transcript →</p>
-        </a>
-        <a href={withBase('/coursework')} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4 transition hover:bg-neutral-800/90 hover:ring-1 hover:ring-accent">
-          <p className="text-sm uppercase tracking-wider text-neutral-400">Coursework</p>
-          <p className="mt-1 font-semibold">Browse the Coursework Library →</p>
-        </a>
-        <a href={withBase('/writing')} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4 transition hover:bg-neutral-800/90 hover:ring-1 hover:ring-accent">
-          <p className="text-sm uppercase tracking-wider text-neutral-400">Writing</p>
-          <p className="mt-1 font-semibold">Read Research & Papers →</p>
-        </a>
-        <a href={withBase('/certifications')} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4 transition hover:bg-neutral-800/90 hover:ring-1 hover:ring-accent">
-          <p className="text-sm uppercase tracking-wider text-neutral-400">Certifications</p>
-          <p className="mt-1 font-semibold">See Training & Credentials →</p>
-        </a>
+      <div className="mt-6">
+        <QuickLinks
+          items={[
+            { href: '/transcript.pdf', label: 'Transcript', title: 'View Official Transcript', external: true },
+            { href: '/coursework', label: 'Coursework', title: 'Browse the Coursework Library' },
+            { href: '/writing', label: 'Writing', title: 'Read Research & Papers' },
+            { href: '/certifications', label: 'Certifications', title: 'See Training & Credentials' },
+          ]}
+        />
       </div>
 
       <div className="mt-10">
