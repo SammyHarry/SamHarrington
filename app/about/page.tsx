@@ -1,6 +1,7 @@
 import SectionHeader from '@/components/section-header';
 import { withBase } from '@/lib/url';
 import SkillPills from '@/components/skill-pills';
+import QuickLinks from '@/components/quick-links';
 
 export const metadata = {
   title: 'About – Sam Harrington',
@@ -42,6 +43,16 @@ export default function AboutPage() {
   return (
     <div className="space-y-12 py-16">
       <SectionHeader eyebrow="About" title="Who I Am" />
+      <div>
+        <QuickLinks
+          items={[
+            { href: '/projects', label: 'Projects', title: 'Explore Case Studies' },
+            { href: '/academics', label: 'Academics', title: 'See Coursework & Terms' },
+            { href: '/sam-harrington-resume.pdf', label: 'Résumé', title: 'Download PDF', external: true },
+            { href: '/contact', label: 'Contact', title: 'Get in Touch' },
+          ]}
+        />
+      </div>
       <div className="space-y-4 text-neutral-300">
         <p>
           I’m an Applied Mathematics and Data Science (AI Track) student at William & Mary, graduating May 2027 on an accelerated three‑year plan. I enjoy building data‑driven products, analyzing complex systems, and working on teams where shipping useful things matters.

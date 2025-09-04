@@ -14,7 +14,7 @@ export default function ResumePage() {
       <p className="text-neutral-400">{resume.education.degree} — GPA {resume.education.gpa}</p>
       <div className="mt-6 flex items-center gap-3">
         <a href={withBase('/sam-harrington-resume.pdf')} className="btn-primary" download aria-label="Download resume PDF">Download PDF</a>
-        <a href={withBase('/transcript.pdf')} className="btn" target="_blank" rel="noopener noreferrer" aria-label="Open transcript PDF in a new tab">View Transcript</a>
+        <a href={withBase('/transcript')} className="btn" aria-label="View transcript in-site viewer">View Transcript</a>
       </div>
     </div>
   );

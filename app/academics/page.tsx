@@ -66,7 +66,7 @@ export default function AcademicsPage() {
       <div className="mt-6">
         <QuickLinks
           items={[
-            { href: '/transcript.pdf', label: 'Transcript', title: 'View Official Transcript', external: true },
+            { href: '/transcript', label: 'Transcript', title: 'View Official Transcript' },
             { href: '/coursework', label: 'Coursework', title: 'Browse the Coursework Library' },
             { href: '/writing', label: 'Writing', title: 'Read Research & Papers' },
             { href: '/certifications', label: 'Certifications', title: 'See Training & Credentials' },
@@ -142,6 +142,9 @@ export default function AcademicsPage() {
             </div>
           ))}
         </div>
+        <p className="mt-3 text-sm text-neutral-400">
+          These credits enabled my accelerated three‑year graduation timeline.
+        </p>
       </div>
 
       

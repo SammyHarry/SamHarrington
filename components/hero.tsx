@@ -32,7 +32,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25, duration: 0.5 }}
         >
-          I’m a third‑year at William & Mary studying Applied Mathematics and Data Science (AI Track). I’ve completed Wall Street Prep’s Financial Modeling & Valuation training. I’m on an accelerated three‑year plan (graduating May 2027) and enjoy building data‑driven products, tackling complex problems, and working on teams that make a real impact.
+          I’m a William & Mary student in Applied Math and Data Science (AI track), graduating May 2027 on an accelerated plan. I build data‑driven products and models that solve real problems in analytics, AI, and finance.
         </motion.p>
         <motion.div
           className="mt-6 flex items-center justify-center gap-3"
