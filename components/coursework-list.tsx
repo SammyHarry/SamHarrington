@@ -59,12 +59,21 @@ export default function CourseworkList({ groups }: { groups: CourseworkGroup[] }
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
-                      <a href={withBase(it.link)} target="_blank" rel="noreferrer" className="font-medium hover:underline">
-                        {it.title}
-                      </a>
-                        <span className="rounded-full border border-neutral-700 px-2 py-0.5 text-[10px] uppercase tracking-wide text-neutral-400">
-                          {g.course}
-                        </span>
+                        <a href={withBase(it.link)} target="_blank" rel="noreferrer" className="font-medium hover:underline">
+                          {it.title}
+                        </a>
+                        {(() => {
+                          const slug = g.course.toLowerCase().replace(/\s+/g, '-');
+                          return (
+                            <a
+                              href={withBase(`/academics/course/${slug}`)}
+                              className="rounded-full border border-neutral-700 px-2 py-0.5 text-[10px] uppercase tracking-wide text-neutral-400 hover:border-neutral-500 hover:text-neutral-200"
+                              title={`View course details for ${g.course}`}
+                            >
+                              {g.course}
+                            </a>
+                          );
+                        })()}
                       </div>
                       <div className="mt-1 text-xs text-neutral-400">
                         {it.pages ? `${it.pages} pages` : 'PDF'}

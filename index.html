@@ -2,24 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sam Harrington - Personal Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sam Harrington</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Redirect to the Next.js site root, preserving project base path if present
+    (function() {
+      var parts = window.location.pathname.split('/').filter(Boolean);
+      var base = parts.length > 0 ? '/' + parts[0] : '';
+      // If running on a user/org root (custom domain), avoid adding base
+      if (/^\w+\.github\.io$/.test(window.location.hostname) === false && base && base.toLowerCase() === '/samharrington') {
+        // Keep project base for GitHub Pages project site
+      } else if (parts.length <= 1) {
+        base = '';
+      }
+      var target = base + '/';
+      // Avoid infinite redirect loops
+      if (window.location.pathname !== target) {
+        window.location.replace(target);
+      }
+    })();
+  </script>
 </head>
 <body>
-  <header>
-    <h1>Sam Harrington</h1>
-    <p>Welcome to my personal website.</p>
-  </header>
+  <div class="wrap">
+    <header class="center">
+      <p class="eyebrow">Data Science • Applied Math • Finance + AI</p>
+      <h1 class="gradient">Sam Harrington</h1>
+      <p class="muted">Redirecting you to the main site…</p>
+    </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>Currently, I only know that my name is Sam Harrington. More details to come!</p>
-  </section>
+    <section class="quick">
+      <a class="card" href="/sam-harrington-resume.pdf">Résumé PDF →</a>
+      <a class="card" href="/projects">Projects →</a>
+      <a class="card" href="/academics">Academics →</a>
+      <a class="card" href="/contact">Contact →</a>
+    </section>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Sam Harrington</p>
-  </footer>
-
+    <footer class="center foot">
+      <p>&copy; <span id="year"></span> Sam Harrington</p>
+    </footer>
+  </div>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>

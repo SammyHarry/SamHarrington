@@ -16,7 +16,7 @@ export default function CourseworkPage() {
 
   return (
     <div className="py-16">
-      <SectionHeader eyebrow="Coursework" title="All Coursework PDFs" blurb="Clean file names with quick expandable excerpts." />
+      <SectionHeader eyebrow="Coursework" title="Coursework Library" blurb="Browse all course deliverables — clean filenames with quick excerpts." />
       <div className="mt-6">
         <CourseworkList groups={groups} />
       </div>

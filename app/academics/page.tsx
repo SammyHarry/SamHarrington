@@ -62,6 +62,26 @@ export default function AcademicsPage() {
         </div>
       </div>
 
+      {/* Quick links to detailed pages */}
+      <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <a href={withBase('/transcript.pdf')} target="_blank" rel="noreferrer" className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4 transition hover:bg-neutral-800/90 hover:ring-1 hover:ring-accent">
+          <p className="text-sm uppercase tracking-wider text-neutral-400">Transcript</p>
+          <p className="mt-1 font-semibold">View Official Transcript →</p>
+        </a>
+        <a href={withBase('/coursework')} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4 transition hover:bg-neutral-800/90 hover:ring-1 hover:ring-accent">
+          <p className="text-sm uppercase tracking-wider text-neutral-400">Coursework</p>
+          <p className="mt-1 font-semibold">Browse the Coursework Library →</p>
+        </a>
+        <a href={withBase('/writing')} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4 transition hover:bg-neutral-800/90 hover:ring-1 hover:ring-accent">
+          <p className="text-sm uppercase tracking-wider text-neutral-400">Writing</p>
+          <p className="mt-1 font-semibold">Read Research & Papers →</p>
+        </a>
+        <a href={withBase('/certifications')} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4 transition hover:bg-neutral-800/90 hover:ring-1 hover:ring-accent">
+          <p className="text-sm uppercase tracking-wider text-neutral-400">Certifications</p>
+          <p className="mt-1 font-semibold">See Training & Credentials →</p>
+        </a>
+      </div>
+
       <div className="mt-10">
         <SectionHeader eyebrow="Completed" title="Terms & Courses" />
         <div className="space-y-8">
@@ -157,23 +177,6 @@ export default function AcademicsPage() {
         <p className="mt-4 text-center text-sm text-neutral-400">
           See more in <a className="underline hover:text-accent" href={withBase('/writing')}>Writing →</a>
         </p>
-      </div>
-
-      <div className="mt-12">
-        <SectionHeader eyebrow="Course Highlights" title="Key Courses" />
-        {courses.map((cat) => (
-          <div key={cat.category} className="mt-4">
-            <h4 className="text-neutral-300">{cat.category}</h4>
-            <div className="mt-2 grid gap-2 md:grid-cols-2">
-              {cat.courses.map((c) => (
-                <div key={c.code} className="rounded border border-neutral-700 p-3">
-                  <p className="font-medium">{c.code}: {c.name}</p>
-                  <p className="text-sm text-neutral-400">{c.skills}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
       </div>
 
       <div className="mt-12">
