@@ -4,6 +4,7 @@ import yaml from 'yaml';
 import SectionHeader from '@/components/section-header';
 import { FileText, ExternalLink, Download } from 'lucide-react';
 import { withBase } from '@/lib/url';
+import QuickLinks from '@/components/quick-links';
 
 interface Writing {
   title: string;
@@ -20,6 +21,16 @@ export default function WritingPage() {
   return (
     <div className="py-16">
       <SectionHeader eyebrow="Research & Writing" title="Reports & Papers" />
+      <div className="mb-6">
+        <QuickLinks
+          items={[
+            { href: '/sam-harrington-resume.pdf', label: 'Résumé', title: 'Download PDF', external: true },
+            { href: '/projects', label: 'Projects', title: 'Explore Case Studies' },
+            { href: '/academics', label: 'Academics', title: 'See Coursework & Terms' },
+            { href: '/coursework', label: 'Coursework', title: 'Browse Deliverables' },
+          ]}
+        />
+      </div>
       <ul className="space-y-6">
         {writings.map((w) => {
           const downloadHref = withBase(w.link.split('#')[0]);

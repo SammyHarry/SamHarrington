@@ -8,6 +8,7 @@ export const metadata = {
 };
 import CertCard, { type Cert } from '@/components/cert-card';
 import Stat from '@/components/stat';
+import QuickLinks from '@/components/quick-links';
 
 export default function CertificationsPage() {
   const file = fs.readFileSync(path.join(process.cwd(), 'data', 'certifications.yml'), 'utf8');
@@ -15,6 +16,16 @@ export default function CertificationsPage() {
   return (
     <div className="py-16">
       <SectionHeader eyebrow="Certifications" title="Finance Training & Credentials" />
+      <div className="mb-6">
+        <QuickLinks
+          items={[
+            { href: '/sam-harrington-resume.pdf', label: 'Résumé', title: 'Download PDF', external: true },
+            { href: '/projects', label: 'Projects', title: 'Explore Case Studies' },
+            { href: '/academics', label: 'Academics', title: 'See Coursework & Terms' },
+            { href: '/coursework', label: 'Coursework', title: 'Browse Deliverables' },
+          ]}
+        />
+      </div>
       <div className="mb-8 grid gap-4 sm:grid-cols-2">
         <Stat label="Programs" value={String(certs.filter((c) => !!c.credential).length)} />
         <Stat label="Modules/Tracks" value={String(certs.filter((c) => !c.credential).length)} />
