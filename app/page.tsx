@@ -10,11 +10,10 @@ export default function HomePage() {
   return (
     <div>
       <Hero />
-      <div className="mx-auto mt-4 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto mt-4 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <Stat label="GPA" value="3.97 / 4.0" />
         <Stat label="Graduation" value="May 2027" />
         <Stat label="Majors" value="Applied Math & Data Sci" />
-        <Stat label="Minor" value="Finance" />
       </div>
       <SectionHeader eyebrow="Highlights" title="Featured Projects" />
       <div className="grid gap-6 md:grid-cols-2">
