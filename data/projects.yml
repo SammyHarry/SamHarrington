@@ -8,14 +8,6 @@
     - Collaborated with a team to launch quickly
     - Live link opens the analytics/leaderboard experience
 
-- title: ACT_AI — Scorecard OCR Pipeline
-  summary: AI-powered pipeline for parsing handwritten scorecards end-to-end
-  stack: [Python, FastAPI, Docker, PaddleOCR]
-  features:
-    - Recognizes handwritten scorecards via OCR (PaddleOCR)
-    - Parses race results and exports structured outputs
-    - Containerized with Docker for reproducible deployment
-  caseStudyPath: /projects/case-study/act-ai-ocr-pipeline
 
 - title: Crawler App
   summary: React Native social platform for sharing nightlife routes
@@ -25,12 +17,6 @@
     - Firebase Auth + Firestore backend
     - Designed for community growth and collaboration
 
-- title: ACT Scorecard (Analytics Platform)
-  summary: Mario Kart tournament analytics (ELO, VR formulas, scorecard parsing)
-  stack: [Next.js, Firestore]
-  features:
-    - ELO rating system and VR computations
-    - Scorecard parsing and player history
 
 - title: The Flat Hat — Webmaster
   summary: Managed W&M’s student newspaper website; WordPress admin and operations
