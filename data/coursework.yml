@@ -411,25 +411,6 @@
         k
       pages: 1
       sizeKB: 113
-- course: Misc
-  items:
-    - title: Study Questions
-      link: /coursework/misc/study-questions.pdf
-      excerpt: >-
-        1. Q: How is the US involvement similar to Hong Kong?
-
-        2. Q: How is the US involvement similar to Taiwan?
-
-        3. Q: What is Japan’s main export to the US
-
-        4. Q: What were some factors that kept the US/Japan relationship strong
-        post
-
-        WW2.
-
-        5. Q: Where do you see the future for women in South Korea?
-      pages: 1
-      sizeKB: 23
 - course: THEA 200
   items:
     - title: Reflection 1
