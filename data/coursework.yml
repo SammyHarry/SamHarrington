@@ -508,7 +508,7 @@
         incomplete at his
       pages: 4
       sizeKB: 1138
-- course: Writing
+- course: FMST 150
   items:
     - title: Harrington 1
       link: /writing/fmst-150-essay-1.pdf
@@ -532,7 +532,9 @@
         Section I: Introduction
       pages: 11
       sizeKB: 3391
-    - title: Sample Writing
+- course: DANC 100
+  items:
+    - title: Hula, a Dance Worth a Thousand Words
       link: /writing/sample-writing.pdf
       excerpt: |-
         Harrington
