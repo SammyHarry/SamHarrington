@@ -31,7 +31,16 @@
   features:
     - ELO rating system and VR computations
     - Scorecard parsing and player history
-    - Clean UI built with Next.js
+
+- title: The Flat Hat — Webmaster
+  summary: Managed W&M’s student newspaper website; WordPress admin and operations
+  stack: [WordPress, SQL, InMotion Hosting, cPanel]
+  link: https://flathatnews.com
+  features:
+    - Oversaw publishing workflows; ensured timely articles and multimedia
+    - Customized themes, layouts, and plugins to improve usability and branding
+    - Managed hosting, backups, and performance on InMotion via cPanel
+    - Diagnosed SQL/WordPress issues and optimized backend performance
 
 - title: Personal Website
   summary: Next.js 14 + Tailwind portfolio (this site)
