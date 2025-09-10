@@ -1,24 +1,3 @@
-- title: Contradictions in Kant’s Categorical Imperative (Ethics 303, Spring 2025)
-  description: Examines internal contradictions within Kant’s universalization tests.
-  link: /writing/sample-writing.pdf#kant
-  pages: 8
-  sizeKB: 58
-- title: Holocaust Denial in U.S. & Germany (History 212, Spring 2025)
-  description: Comparative analysis of educational and legal responses to denial.
-  link: /writing/sample-writing.pdf#holocaust
-  pages: 8
-  sizeKB: 58
-- title: "Hula, a Dance Worth a Thousand Words (DANC 100)"
-  description: Short essay from DANC 100 reflecting on hula’s meaning and form.
-  link: /writing/sample-writing.pdf#hula
-  excerpt: |-
-    Harrington 1
-    William and Mary
-    Hula, a Dance Worth a Thousand Words
-    Sam Harrington
-    Professor Glenn
-  pages: 8
-  sizeKB: 58
 - title: Good or Evil, there is an In-Between.
   description: FMST 150 — Writing About Film; moral ambiguity in Return of the Jedi and Vader’s redemption.
   link: /writing/fmst-150-essay-1.pdf
@@ -58,3 +37,24 @@
     representation.
   pages: 11
   sizeKB: 3391
+- title: "Hula, a Dance Worth a Thousand Words (DANC 100)"
+  description: Short essay from DANC 100 reflecting on hula’s meaning and form.
+  link: /writing/sample-writing.pdf#hula
+  excerpt: |-
+    Harrington 1
+    William and Mary
+    Hula, a Dance Worth a Thousand Words
+    Sam Harrington
+    Professor Glenn
+  pages: 8
+  sizeKB: 58
+- title: Contradictions in Kant’s Categorical Imperative (Ethics 303, Spring 2025)
+  description: Examines internal contradictions within Kant’s universalization tests.
+  link: /writing/sample-writing.pdf#kant
+  pages: 8
+  sizeKB: 58
+- title: Holocaust Denial in U.S. & Germany (History 212, Spring 2025)
+  description: Comparative analysis of educational and legal responses to denial.
+  link: /writing/sample-writing.pdf#holocaust
+  pages: 8
+  sizeKB: 58
