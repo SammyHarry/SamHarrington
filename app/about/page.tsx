@@ -74,10 +74,7 @@ export default function AboutPage() {
           I love climbing and bouldering, running and hiking national parks, and cheering for Philadelphia sports teams. Lifelong learning matters to me—especially in finance, AI, and data science. I value strong friendships, being part of a community, and spending time outdoors. What I stand for: kindness, accountability, humility, achievement, and ambition.
         </p>
       </div>
-      <div>
-        <SectionHeader eyebrow="AI" title="16 AI Things" blurb="Reflections from W&M’s self‑paced Generative AI program." />
-        <a href={withBase('/genai')} className="mt-2 inline-block text-accent underline">Read my Generative AI reflections →</a>
-      </div>
+      {/* 16 AI Things section intentionally removed from About page */}
     </div>
   );
 }
