@@ -33,6 +33,24 @@ training:
       - "ERC™ 7: Intrinsic Valuation"
       - "ERC™ 8: Professional Soft Skills"
       - "Bonus: Breaking Into Research"
+  - title: 16 AI Things in 93 Days — W&M Libraries (Completed 16/16)
+    items:
+      - "What is Generative AI?"
+      - "AI 101: What’s under the hood?"
+      - "AI and human smarts: Let’s compare"
+      - "GenAI concerns"
+      - "Prompt power: Make AI work for you"
+      - "Choosing the right AI tool"
+      - "Whose voices? Accessibility in AI"
+      - "Your ethical AI use"
+      - "GenAI and creative and intellectual work"
+      - "How AI was created and why it matters"
+      - "Fact‑checking and AI hallucinations/mirages"
+      - "Generating images"
+      - "How are people using AI now"
+      - "AIs and brain damage?"
+      - "Create your own Google Gem (chatbot)"
+      - "Looking back, thinking forward"
 experience:
   - company: The Flat Hat (William & Mary)
     role: Webmaster
