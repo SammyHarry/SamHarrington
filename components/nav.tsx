@@ -11,7 +11,6 @@ const links = [
   { href: '/experience', label: 'Experience' },
   { href: '/projects', label: 'Projects' },
   { href: '/academics', label: 'Academics' },
-  { href: '/notes', label: 'Blog' },
   { href: '/resume', label: 'Résumé' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -30,16 +29,20 @@ export default function Nav() {
           </button>
         </div>
         <ul className="hidden md:flex items-center gap-4">
-          {links.map((l) => (
-            <li key={l.href}>
-              <Link
-                href={l.href}
-                className={path === l.href ? 'text-accent' : 'hover:text-accent transition-colors'}
-              >
-                {l.label}
-              </Link>
-            </li>
-          ))}
+          {links.map((l) => {
+            const isActive = l.href === '/' ? path === '/' : (path === l.href || path.startsWith(l.href + '/'));
+            return (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  aria-current={isActive ? 'page' : undefined}
+                  className={isActive ? 'text-accent' : 'hover:text-accent transition-colors'}
+                >
+                  {l.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
       {open && (

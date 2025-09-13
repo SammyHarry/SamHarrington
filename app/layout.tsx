@@ -6,9 +6,13 @@ import Footer from '@/components/footer';
 import Background from '@/components/background';
 import Script from 'next/script';
 
+// Canonical site URL for metadata and JSON-LD
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+
 export const metadata: Metadata = {
   title: 'Sam Harrington',
   description: 'Personal website of Sam Harrington',
+  metadataBase: new URL(SITE_URL),
   icons: {
     icon: '/favicon.svg',
   },
@@ -16,8 +20,9 @@ export const metadata: Metadata = {
     title: 'Sam Harrington',
     description: 'Data Science • Applied Math • Finance + AI',
     type: 'website',
-    url: 'https://samharrington.dev',
+    url: '/',
   },
+  alternates: { canonical: '/' },
   twitter: {
     card: 'summary_large_image',
     title: 'Sam Harrington',
@@ -47,7 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             '@context': 'https://schema.org',
             '@type': 'Person',
             name: 'Sam Harrington',
-            url: 'https://sammyharry.github.io/SamHarrington/',
+            url: SITE_URL,
             sameAs: [
               'https://www.linkedin.com/in/s-harrington011',
               'https://github.com/SammyHarry'

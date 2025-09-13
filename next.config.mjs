@@ -12,6 +12,13 @@ const withMDX = createMDX({
 
 const isGitHubPages = process.env.GITHUB_PAGES === 'true';
 const basePath = isGitHubPages ? (process.env.BASE_PATH || '') : '';
+// Derive a canonical site URL for metadata, sitemap, and robots during
+// GitHub Pages builds. Defaults to the project URL under the user's Pages.
+// For local/dev or custom deployments, NEXT_PUBLIC_SITE_URL can override.
+const siteOrigin = isGitHubPages
+  ? 'https://sammyharry.github.io'
+  : (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000');
+const siteUrl = `${siteOrigin}${basePath || ''}`;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -20,6 +27,7 @@ const nextConfig = {
   // Expose basePath to the client for manual URL building (for <a> tags)
   env: {
     ...(isGitHubPages ? { NEXT_PUBLIC_BASE_PATH: basePath || '' } : {}),
+    NEXT_PUBLIC_SITE_URL: siteUrl,
   },
   images: {
     domains: [],

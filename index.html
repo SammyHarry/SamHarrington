@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sam Harrington</title>
   <link rel="stylesheet" href="style.css">
+  <noscript><meta http-equiv="refresh" content="0; url=./" /></noscript>
   <script>
     // Redirect to the Next.js site root, preserving project base path if present
     (function() {
@@ -33,10 +34,11 @@
     </header>
 
     <section class="quick">
-      <a class="card" href="/sam-harrington-resume.pdf">Résumé PDF →</a>
-      <a class="card" href="/projects">Projects →</a>
-      <a class="card" href="/academics">Academics →</a>
-      <a class="card" href="/contact">Contact →</a>
+      <!-- Use base-path safe relative links so they work on GitHub Pages even without JS -->
+      <a class="card" href="sam-harrington-resume.pdf">Résumé PDF →</a>
+      <a class="card" href="projects">Projects →</a>
+      <a class="card" href="academics">Academics →</a>
+      <a class="card" href="contact">Contact →</a>
     </section>
 
     <footer class="center foot">

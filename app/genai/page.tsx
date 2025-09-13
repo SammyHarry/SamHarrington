@@ -31,8 +31,6 @@ export default function GenAIPage() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {data.items.map((it, idx) => {
           const label = `Thing ${idx + 1}`;
-          const slug = `${String(idx + 1).padStart(2, '0')}-${it.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
-          const postHref = withBase(`/notes/genai-${slug}`);
           const content = (
             <>
               <div className="flex items-center justify-between">
@@ -40,15 +38,11 @@ export default function GenAIPage() {
                 <span className="text-xs text-accent">{it.status === 'completed' ? 'Completed' : it.status}</span>
               </div>
               <h3 className="mt-2 font-semibold">{it.title}</h3>
-              <p className="mt-1 text-xs text-neutral-400">{it.status === 'completed' ? 'Read the reflection' : 'Reflection coming soon'}</p>
+              <p className="mt-1 text-xs text-neutral-400">{it.status === 'completed' ? 'Reflection completed' : 'Reflection coming soon'}</p>
             </>
           );
-          return it.status === 'completed' ? (
-            <a key={it.title + idx} href={postHref} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4 transition hover:bg-neutral-800/90 hover:ring-1 hover:ring-accent">
-              {content}
-            </a>
-          ) : (
-            <div key={it.title + idx} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4 opacity-90">
+          return (
+            <div key={it.title + idx} className="rounded-2xl border border-white/5 bg-neutral-800/70 p-4">
               {content}
             </div>
           );
