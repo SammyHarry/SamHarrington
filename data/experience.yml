@@ -1,10 +1,53 @@
-- company: Dog Street to Wall Street (William & Mary)
-  role: Ambassador (Selective Program)
-  dates: 2025–Present
+# Work Experience
+- company: "Cobie’s Ice Cream"
+  role: Dishwasher, Busser, Server
+  dates: Summer 2021
   bullets:
-    - Professional development and networking with alumni and industry mentors
-    - Selected cohort focused on finance, markets, and career skills
-  tags: [Leadership]
+    - Worked in a high-volume Cape Cod restaurant, starting in the dish pit before moving into bussing tables and serving ice cream.
+    - Learned to balance long shifts with composure and efficiency in a fast-paced environment.
+  tags: [Food Service, Seasonal]
+  skills:
+    soft: [Work ethic, Grit, Teamwork under pressure, Time management]
+    technical: [Customer service basics, Food service operations, Efficiency in high-volume environments]
+
+- company: "Scooped Ice Cream Shop"
+  role: "Scooper → Key Holder → Ice Cream Maker → Manager"
+  dates: Summer 2022 – Summer 2025
+  bullets:
+    - Scooper: Learned customer service, speed, and consistency during busy summer shifts.
+    - Key Holder: Trusted with opening/closing procedures, register balancing, and shift oversight.
+    - Ice Cream Maker: Produced ice cream, managed supply levels, and ensured product quality.
+    - Manager: Oversaw full shop operations including scheduling, inventory, training, and customer issue resolution.
+  tags: [Operations, Leadership]
+  skills:
+    soft: [Leadership, Accountability, Independent decision-making, Conflict resolution, Staff development]
+    technical: [POS systems, Opening/closing procedures, Cash handling, Ice cream production, Inventory management, Staff scheduling & training]
+
+- company: Nonprofit Fundraising Company
+  role: Data Intern
+  dates: Summer 2023
+  bullets:
+    - Analyzed large datasets to identify donor patterns and campaign performance.
+    - Built Excel models and Tableau dashboards to present insights to leadership.
+    - Helped fundraising teams make data-driven strategic decisions.
+  tags: [Data, Analytics]
+  skills:
+    soft: [Adaptability, Professional communication, Attention to detail]
+    technical: [Excel (pivot tables, formulas, cleaning), Tableau (dashboards, visualization, data prep)]
+
+- company: K1 Investment Management
+  role: Private Equity Intern
+  dates: Summer 2024
+  bullets:
+    - Supported due diligence on investment opportunities, including evaluating Panopto’s AI teaching product.
+    - Built and refined pitch decks, analyzed financial statements, and conducted market research.
+    - Collaborated across teams to assess operational and strategic risks.
+  tags: [Private Equity, Finance]
+  skills:
+    soft: [Analytical reasoning, Presentation development, Collaboration with senior staff, Professional polish]
+    technical: [Exposure to financial modeling, Market research, Deck creation, Investment due diligence]
+
+# To be split into a separate non-work timeline later
 - company: The Flat Hat (William & Mary)
   role: Webmaster
   dates: 2025–Present
@@ -14,6 +57,15 @@
     - Worked with SQL databases to manage content, troubleshoot backend issues, and optimize performance
     - Collaborated with editors to streamline digital workflows and ensure reliable, accessible publishing
   tags: [WordPress, Web, SQL, Operations]
+
+- company: Dog Street to Wall Street (William & Mary)
+  role: Ambassador (Selective Program)
+  dates: 2025–Present
+  bullets:
+    - Professional development and networking with alumni and industry mentors
+    - Selected cohort focused on finance, markets, and career skills
+  tags: [Leadership]
+
 - company: Sigma Pi Fraternity
   role: Housing Manager
   dates: 2025–2026
@@ -21,10 +73,3 @@
     - Managed fraternity housing operations, contracts, and community agreements
     - Coordinated maintenance, budgeting, and communication with stakeholders
   tags: [Leadership]
-- company: Scooped Homemade Ice Cream
-  role: Manager (pre-college)
-  dates: 2022–2023
-  bullets:
-    - Produced ~200 gallons weekly; managed 16 flavors/day from a 160+ rotation
-    - Scheduled and trained staff; improved coverage and reduced labor costs ~12%
-  tags: [Operations]
