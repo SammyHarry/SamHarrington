@@ -6,13 +6,17 @@ import Footer from '@/components/footer';
 import Background from '@/components/background';
 import Script from 'next/script';
 
-// Canonical site URL for metadata and JSON-LD
+// Canonical site URL for metadata and JSON-LD (may include base path)
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+// Use origin for metadataBase to avoid losing correctness when a base path exists
+const SITE_ORIGIN = (() => {
+  try { return new URL(SITE_URL).origin; } catch { return 'http://localhost:3000'; }
+})();
 
 export const metadata: Metadata = {
   title: 'Sam Harrington',
   description: 'Personal website of Sam Harrington',
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(SITE_ORIGIN),
   icons: {
     icon: '/favicon.svg',
   },
@@ -20,9 +24,9 @@ export const metadata: Metadata = {
     title: 'Sam Harrington',
     description: 'Data Science • Applied Math • Finance + AI',
     type: 'website',
-    url: '/',
+    url: SITE_URL,
   },
-  alternates: { canonical: '/' },
+  alternates: { canonical: SITE_URL },
   twitter: {
     card: 'summary_large_image',
     title: 'Sam Harrington',
