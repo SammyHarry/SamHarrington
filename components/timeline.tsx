@@ -17,18 +17,36 @@ interface Experience {
 
 export default function Timeline({ category }: { category?: 'work' | 'leadership' }) {
   const file = fs.readFileSync(path.join(process.cwd(), 'data', 'experience.yml'), 'utf8');
-  let experience = yaml.parse(file) as Experience[];
+  let experienceRaw = yaml.parse(file) as Experience[];
   if (category) {
-    experience = experience.filter((e) => (e.category || 'work') === category);
+    experienceRaw = experienceRaw.filter((e) => (e.category || 'work') === category);
   }
-  // Sort by most recent first, treating "Present" as far future
+  // Sort by most recent first with season awareness; break ties by source order (later first)
+  const seasonRank: Record<string, number> = { spring: 1, summer: 2, fall: 3, winter: 4 };
   const dateWeight = (d: string) => {
-    const presentBoost = /present/i.test(d) ? 10000 : 0;
+    if (/present/i.test(d)) return 999999; // pin to top
+    // Try to find the last "Season YYYY" in the string
+    const matches = Array.from(d.matchAll(/(Spring|Summer|Fall|Winter)\s+(\d{4})/gi));
+    if (matches.length) {
+      const last = matches[matches.length - 1];
+      const season = (last[1] || '').toLowerCase();
+      const year = Number(last[2]);
+      const s = seasonRank[season] ?? 0;
+      return year * 10 + s;
+    }
+    // Fallback: use max year found
     const years = Array.from(d.matchAll(/\d{4}/g)).map((m) => Number(m[0]));
     const maxYear = years.length ? Math.max(...years) : 0;
-    return presentBoost + maxYear;
+    return maxYear * 10; // scale to align with season-weighted values
   };
-  experience = experience.sort((a, b) => dateWeight(b.dates) - dateWeight(a.dates));
+  const experience = experienceRaw
+    .map((e, idx) => ({ e, idx }))
+    .sort((a, b) => {
+      const diff = dateWeight(b.e.dates) - dateWeight(a.e.dates);
+      if (diff !== 0) return diff;
+      return b.idx - a.idx; // prefer later items in the source file
+    })
+    .map(({ e }) => e);
 
   return (
     <ol className="relative pl-8">
