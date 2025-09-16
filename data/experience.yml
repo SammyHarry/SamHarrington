@@ -9,6 +9,7 @@
   skills:
     soft: [Work ethic, Grit, Teamwork under pressure, Time management]
     technical: [Customer service basics, Food service operations, Efficiency in high-volume environments]
+  category: work
 
 - company: "Scooped Ice Cream Shop"
   role: "Scooper → Key Holder → Ice Cream Maker → Manager"
@@ -22,6 +23,7 @@
   skills:
     soft: [Leadership, Accountability, Independent decision-making, Conflict resolution, Staff development]
     technical: [POS systems, Opening/closing procedures, Cash handling, Ice cream production, Inventory management, Staff scheduling & training]
+  category: work
 
 - company: Nonprofit Fundraising Company
   role: Data Intern
@@ -34,6 +36,7 @@
   skills:
     soft: [Adaptability, Professional communication, Attention to detail]
     technical: [Excel (pivot tables, formulas, cleaning), Tableau (dashboards, visualization, data prep)]
+  category: work
 
 - company: K1 Investment Management
   role: Private Equity Intern
@@ -46,6 +49,7 @@
   skills:
     soft: [Analytical reasoning, Presentation development, Collaboration with senior staff, Professional polish]
     technical: [Exposure to financial modeling, Market research, Deck creation, Investment due diligence]
+  category: work
 
 # To be split into a separate non-work timeline later
 - company: The Flat Hat (William & Mary)
@@ -57,6 +61,7 @@
     - Worked with SQL databases to manage content, troubleshoot backend issues, and optimize performance
     - Collaborated with editors to streamline digital workflows and ensure reliable, accessible publishing
   tags: [WordPress, Web, SQL, Operations]
+  category: leadership
 
 - company: Dog Street to Wall Street (William & Mary)
   role: Ambassador (Selective Program)
@@ -65,6 +70,7 @@
     - Professional development and networking with alumni and industry mentors
     - Selected cohort focused on finance, markets, and career skills
   tags: [Leadership]
+  category: leadership
 
 - company: Sigma Pi Fraternity
   role: Housing Manager
@@ -73,3 +79,4 @@
     - Managed fraternity housing operations, contracts, and community agreements
     - Coordinated maintenance, budgeting, and communication with stakeholders
   tags: [Leadership]
+  category: leadership

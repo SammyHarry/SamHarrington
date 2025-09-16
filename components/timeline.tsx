@@ -12,28 +12,44 @@ interface Experience {
     soft?: string[];
     technical?: string[];
   };
+  category?: 'work' | 'leadership';
 }
 
-export default function Timeline() {
+export default function Timeline({ category }: { category?: 'work' | 'leadership' }) {
   const file = fs.readFileSync(path.join(process.cwd(), 'data', 'experience.yml'), 'utf8');
-  const experience = yaml.parse(file) as Experience[];
+  let experience = yaml.parse(file) as Experience[];
+  if (category) {
+    experience = experience.filter((e) => (e.category || 'work') === category);
+  }
 
   return (
-    <ol className="relative border-l border-neutral-700 pl-6">
+    <div className="grid gap-4 md:grid-cols-2">
       {experience.map((exp) => (
-        <li key={exp.company + exp.dates} className="mb-10 ml-4">
-          <div className="absolute -left-2 h-4 w-4 rounded-full bg-accent" />
-          <h3 className="text-xl font-semibold">{exp.role}</h3>
-          <span className="text-sm text-neutral-400">{exp.company} • {exp.dates}</span>
+        <article
+          key={exp.company + exp.dates}
+          className="rounded-2xl bg-neutral-800/90 p-5 ring-1 ring-inset ring-white/5 backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-neutral-800"
+        >
+          <header className="flex items-baseline justify-between gap-3">
+            <h3 className="text-lg font-semibold gradient-text">{exp.role}</h3>
+            <span className="text-xs rounded-full border border-neutral-700 px-2 py-0.5 uppercase tracking-wide text-neutral-400">{exp.dates}</span>
+          </header>
+          <p className="mt-1 text-sm text-neutral-400">{exp.company}</p>
+          {(exp.tags && exp.tags.length > 0) && (
+            <div className="mt-2 flex flex-wrap gap-2">
+              {exp.tags.map((t) => (
+                <span key={t} className="rounded-md bg-neutral-700/60 px-2 py-0.5 text-xs text-neutral-300">{t}</span>
+              ))}
+            </div>
+          )}
           {(exp.bullets && exp.bullets.length > 0) && (
-            <ul className="mt-2 list-disc pl-4 text-neutral-300">
+            <ul className="mt-3 list-disc pl-5 text-sm text-neutral-300">
               {exp.bullets.map((b) => (
                 <li key={b}>{b}</li>
               ))}
             </ul>
           )}
           {exp.skills && (exp.skills.soft?.length || exp.skills.technical?.length) && (
-            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {exp.skills.soft && exp.skills.soft.length > 0 && (
                 <div>
                   <p className="text-sm font-medium text-neutral-400">Skills — Soft</p>
@@ -56,8 +72,8 @@ export default function Timeline() {
               )}
             </div>
           )}
-        </li>
+        </article>
       ))}
-    </ol>
+    </div>
   );
 }

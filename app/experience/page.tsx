@@ -16,7 +16,13 @@ export default function ExperiencePage() {
           ]}
         />
       </div>
-      <Timeline />
+      <SectionHeader eyebrow="Work" title="Work Experience" />
+      <Timeline category="work" />
+
+      <div className="mt-12">
+        <SectionHeader eyebrow="Leadership & Programs" title="Leadership & Roles" />
+        <Timeline category="leadership" />
+      </div>
     </div>
   );
 }
