@@ -16,12 +16,15 @@ export default function ExperiencePage() {
           ]}
         />
       </div>
-      <SectionHeader eyebrow="Work" title="Work Experience" />
-      <Timeline category="work" />
-
-      <div className="mt-12">
-        <SectionHeader eyebrow="Leadership & Programs" title="Leadership & Roles" />
-        <Timeline category="leadership" />
+      <div className="grid gap-8 lg:grid-cols-2">
+        <section>
+          <SectionHeader eyebrow="Leadership & Programs" title="Leadership & Roles" />
+          <Timeline category="leadership" />
+        </section>
+        <section>
+          <SectionHeader eyebrow="Work" title="Work Experience" />
+          <Timeline category="work" />
+        </section>
       </div>
     </div>
   );

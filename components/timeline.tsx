@@ -21,6 +21,14 @@ export default function Timeline({ category }: { category?: 'work' | 'leadership
   if (category) {
     experience = experience.filter((e) => (e.category || 'work') === category);
   }
+  // Sort by most recent first, treating "Present" as far future
+  const dateWeight = (d: string) => {
+    const presentBoost = /present/i.test(d) ? 10000 : 0;
+    const years = Array.from(d.matchAll(/\d{4}/g)).map((m) => Number(m[0]));
+    const maxYear = years.length ? Math.max(...years) : 0;
+    return presentBoost + maxYear;
+  };
+  experience = experience.sort((a, b) => dateWeight(b.dates) - dateWeight(a.dates));
 
   return (
     <ol className="relative pl-8">
